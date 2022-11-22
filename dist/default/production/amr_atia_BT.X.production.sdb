@@ -1,0 +1,265 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F877A ]
+[d frameptr 0 ]
+"16 D:\amr_atia_BT.X/LCD.h
+[v _LCD_Data LCD_Data `(v  1 e 1 0 ]
+"27
+[v _LCD_Command LCD_Command `(v  1 e 1 0 ]
+"37
+[v _LCD_init LCD_init `(v  1 e 1 0 ]
+"46
+[v _LCD_string LCD_string `(v  1 e 1 0 ]
+"52
+[v _itoa itoa `(*.4uc  1 e 1 0 ]
+"81
+[v _LCD_Clear LCD_Clear `(v  1 e 1 0 ]
+"11 D:\amr_atia_BT.X/sensor.h
+[v _dist1 dist1 `(f  1 e 4 0 ]
+"29
+[v _dist2 dist2 `(f  1 e 4 0 ]
+"47
+[v _dist3 dist3 `(f  1 e 4 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"28 D:\amr_atia_BT.X\mainBT.c
+[v _main main `(v  1 e 1 0 ]
+"217 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h
+[v _PORTB PORTB `VEuc  1 e 1 @6 ]
+"635
+[v _TMR1 TMR1 `VEus  1 e 2 @14 ]
+"1376
+[v _TRISB TRISB `VEuc  1 e 1 @134 ]
+"2715
+[v _RC2 RC2 `VEb  1 e 0 @58 ]
+"2718
+[v _RC3 RC3 `VEb  1 e 0 @59 ]
+"2721
+[v _RC4 RC4 `VEb  1 e 0 @60 ]
+"2724
+[v _RC5 RC5 `VEb  1 e 0 @61 ]
+"2754
+[v _RD0 RD0 `VEb  1 e 0 @64 ]
+"2757
+[v _RD1 RD1 `VEb  1 e 0 @65 ]
+"2760
+[v _RD2 RD2 `VEb  1 e 0 @66 ]
+"2763
+[v _RD3 RD3 `VEb  1 e 0 @67 ]
+"2766
+[v _RD4 RD4 `VEb  1 e 0 @68 ]
+"2769
+[v _RD5 RD5 `VEb  1 e 0 @69 ]
+"2772
+[v _RD6 RD6 `VEb  1 e 0 @70 ]
+"2775
+[v _RD7 RD7 `VEb  1 e 0 @71 ]
+"2862
+[v _T1CKPS0 T1CKPS0 `VEb  1 e 0 @132 ]
+"2865
+[v _T1CKPS1 T1CKPS1 `VEb  1 e 0 @133 ]
+"2889
+[v _TMR1CS TMR1CS `VEb  1 e 0 @129 ]
+"2898
+[v _TMR1ON TMR1ON `VEb  1 e 0 @128 ]
+"2970
+[v _TRISC2 TRISC2 `VEb  1 e 0 @1082 ]
+"2973
+[v _TRISC3 TRISC3 `VEb  1 e 0 @1083 ]
+"2976
+[v _TRISC4 TRISC4 `VEb  1 e 0 @1084 ]
+"2979
+[v _TRISC5 TRISC5 `VEb  1 e 0 @1085 ]
+"2988
+[v _TRISD0 TRISD0 `VEb  1 e 0 @1088 ]
+"2991
+[v _TRISD1 TRISD1 `VEb  1 e 0 @1089 ]
+"2994
+[v _TRISD2 TRISD2 `VEb  1 e 0 @1090 ]
+"2997
+[v _TRISD3 TRISD3 `VEb  1 e 0 @1091 ]
+"3000
+[v _TRISD4 TRISD4 `VEb  1 e 0 @1092 ]
+"3003
+[v _TRISD5 TRISD5 `VEb  1 e 0 @1093 ]
+"3006
+[v _TRISD6 TRISD6 `VEb  1 e 0 @1094 ]
+"3009
+[v _TRISD7 TRISD7 `VEb  1 e 0 @1095 ]
+"28 D:\amr_atia_BT.X\mainBT.c
+[v _main main `(v  1 e 1 0 ]
+{
+"57
+[v main@distance3 distance3 `f  1 a 4 55 ]
+"56
+[v main@distance2 distance2 `f  1 a 4 51 ]
+"55
+[v main@distance1 distance1 `f  1 a 4 47 ]
+"61
+[v main@count1 count1 `i  1 a 2 42 ]
+"60
+[v main@count2 count2 `i  1 a 2 40 ]
+"59
+[v main@count3 count3 `i  1 a 2 38 ]
+"64
+[v main@c1 c1 `uc  1 a 1 46 ]
+"63
+[v main@c2 c2 `uc  1 a 1 45 ]
+"62
+[v main@c3 c3 `uc  1 a 1 44 ]
+"138
+} 0
+"52 D:\amr_atia_BT.X/LCD.h
+[v _itoa itoa `(*.4uc  1 e 1 0 ]
+{
+"57
+[v itoa@c c `i  1 a 2 2 ]
+"55
+[v itoa@original original `i  1 a 2 0 ]
+"52
+[v itoa@value value `i  1 p 2 9 ]
+"54
+[v itoa@buffer buffer `[12]uc  1 s 12 buffer ]
+"74
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+{
+"10
+[v ___awmod@sign sign `uc  1 a 1 6 ]
+[v ___awmod@counter counter `uc  1 a 1 5 ]
+"5
+[v ___awmod@divisor divisor `i  1 p 2 0 ]
+[v ___awmod@dividend dividend `i  1 p 2 2 ]
+"34
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 7 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 6 ]
+[v ___awdiv@counter counter `uc  1 a 1 5 ]
+"5
+[v ___awdiv@divisor divisor `i  1 p 2 0 ]
+[v ___awdiv@dividend dividend `i  1 p 2 2 ]
+"41
+} 0
+"47 D:\amr_atia_BT.X/sensor.h
+[v _dist3 dist3 `(f  1 e 4 0 ]
+{
+"49
+[v dist3@distance3 distance3 `f  1 a 4 31 ]
+"63
+} 0
+"29
+[v _dist2 dist2 `(f  1 e 4 0 ]
+{
+"31
+[v dist2@distance2 distance2 `f  1 a 4 31 ]
+"45
+} 0
+"11
+[v _dist1 dist1 `(f  1 e 4 0 ]
+{
+"13
+[v dist1@distance1 distance1 `f  1 a 4 31 ]
+"27
+} 0
+"10 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+{
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+"13
+[v ___xxtofl@arg arg `ul  1 a 4 10 ]
+"12
+[v ___xxtofl@exp exp `uc  1 a 1 9 ]
+"10
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+[v ___xxtofl@val val `l  1 p 4 0 ]
+"15
+[v ___xxtofl@sign sign `uc  1 a 1 8 ]
+"44
+} 0
+"8 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+{
+"21
+[v ___fldiv@grs grs `ul  1 a 4 20 ]
+"22
+[v ___fldiv@rem rem `ul  1 a 4 13 ]
+"20
+[v ___fldiv@new_exp new_exp `i  1 a 2 18 ]
+"19
+[v ___fldiv@aexp aexp `uc  1 a 1 25 ]
+"18
+[v ___fldiv@bexp bexp `uc  1 a 1 24 ]
+"16
+[v ___fldiv@sign sign `uc  1 a 1 17 ]
+"8
+[v ___fldiv@a a `d  1 p 4 0 ]
+[v ___fldiv@b b `d  1 p 4 4 ]
+"185
+} 0
+"4 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
+{
+[v ___flge@ff1 ff1 `d  1 p 4 0 ]
+[v ___flge@ff2 ff2 `d  1 p 4 4 ]
+"19
+} 0
+"46 D:\amr_atia_BT.X/LCD.h
+[v _LCD_string LCD_string `(v  1 e 1 0 ]
+{
+"48
+[v LCD_string@i i `i  1 a 2 5 ]
+"46
+[v LCD_string@str str `*.26uc  1 p 2 3 ]
+"51
+} 0
+"16
+[v _LCD_Data LCD_Data `(v  1 e 1 0 ]
+{
+[v LCD_Data@data data `uc  1 a 1 wreg ]
+[v LCD_Data@data data `uc  1 a 1 wreg ]
+"18
+[v LCD_Data@data data `uc  1 a 1 2 ]
+"24
+} 0
+"37
+[v _LCD_init LCD_init `(v  1 e 1 0 ]
+{
+"44
+} 0
+"81
+[v _LCD_Clear LCD_Clear `(v  1 e 1 0 ]
+{
+"84
+} 0
+"27
+[v _LCD_Command LCD_Command `(v  1 e 1 0 ]
+{
+[v LCD_Command@cmd cmd `uc  1 a 1 wreg ]
+[v LCD_Command@cmd cmd `uc  1 a 1 wreg ]
+"29
+[v LCD_Command@cmd cmd `uc  1 a 1 2 ]
+"35
+} 0
