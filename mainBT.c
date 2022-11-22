@@ -44,6 +44,10 @@ void main(void)
   T1CKPS1 = 0;
   // clock select for timers ------------------------------
   TMR1CS = 0;
+  // PINs for WIFI ESP8266 Module ---------------------------
+  TRISA0 = 0; // 150 cm - counter 1
+  TRISA1 = 0; // 170 cm - counter 2
+  TRISA2 = 0; // 190 cm - counter 3
    
   float distance1;
   float distance2;
@@ -80,6 +84,11 @@ void main(void)
         RD1=0;
         RD2=0;
         RD3=0;
+       
+        RA0=0;
+        RA1=0;
+        RA2=0;
+       
         __delay_ms(50);
 
       distance3 =dist3();
@@ -91,14 +100,16 @@ void main(void)
       if(distance3 <60){// person detected at 150
          RD1=1;
          distance2=dist2();
-         if(distance2>60)// no person at 170
+         if(distance2>60)// no person at 170   - CounterWIFI 1 ++
          {
-              //LCD_Clear();
-             LCD_Command(0xC0);
-             count3++;
-             c3=itoa(count3);
-             LCD_string(c3);
-             BT_load_string("People between 150-170:  ");
+             RA0 = 1;  // WIFI update
+            //LCD_Clear();    
+            LCD_Command(0xC0);
+            count3++;
+            c3=itoa(count3);
+            LCD_string(c3);
+            //------------------- BT update
+            BT_load_string("People between 150-170:  ");
             broadcast_BT();
             BT_load_string(c3);
             broadcast_BT();
@@ -112,7 +123,8 @@ void main(void)
          if(distance2<60){// Person at 170
              RD2=1;
              distance1= dist1();
-             if(distance1>60){// no person at 190
+             if(distance1>60){                   // no person at 190
+              RA1 = 1;  // WIFI update
               //LCD_Clear();
              LCD_Command(0xC5);
              count2++;
@@ -129,7 +141,8 @@ void main(void)
               __delay_ms(500);
              
          }
-             if(distance1<60){
+             if(distance1<60){  // person detected at 190
+                 RA2 = 1;  // WIFI update
                  RD3=1;
                  LCD_Command(0xCC);
                  count1++;
