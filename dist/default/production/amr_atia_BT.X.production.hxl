@@ -9,11 +9,11 @@
 ### Memory Usage ###
  Intel Hex-file ranges:
   0h - FFFh		(dist/default/production\amr_atia_BT.X.production.hex)
-  18E8h - 1FFFh		(dist/default/production\amr_atia_BT.X.production.hex)
+  1922h - 1FFFh		(dist/default/production\amr_atia_BT.X.production.hex)
   4000h - 4007h		(dist/default/production\amr_atia_BT.X.production.hex)
   400Eh - 400Fh		(dist/default/production\amr_atia_BT.X.production.hex)
  Unused ranges:
-  1000h - 18E7h
+  1000h - 1921h
   2000h - 3FFFh
   4008h - 400Dh
 
@@ -281,11 +281,7 @@
 00000FE0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00000FF0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 ----------------------------------------------------------
-000018E0 | -- -- -- -- -- -- -- -- H1 H1 H1 H1 H1 H1 H1 H1
-000018F0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00001900 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00001910 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00001920 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00001920 | -- -- H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00001930 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00001940 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00001950 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1

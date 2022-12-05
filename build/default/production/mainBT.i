@@ -12,7 +12,6 @@
 
 
 
-
 #pragma config FOSC = HS
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
@@ -21,7 +20,6 @@
 #pragma config CPD = OFF
 #pragma config WRT = OFF
 #pragma config CP = OFF
-
 
 
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 1 3
@@ -1870,7 +1868,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 2 3
-# 17 "mainBT.c" 2
+# 15 "mainBT.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c90\\math.h" 1 3
 
@@ -1905,9 +1903,7 @@ extern double ldexp(double, int);
 extern double fmod(double, double);
 extern double trunc(double);
 extern double round(double);
-# 18 "mainBT.c" 2
-
-
+# 16 "mainBT.c" 2
 
 
 # 1 "./sensor.h" 1
@@ -1965,7 +1961,7 @@ float dist3(void)
 
     return distance3;
 }
-# 22 "mainBT.c" 2
+# 18 "mainBT.c" 2
 
 # 1 "./LCD.h" 1
 # 16 "./LCD.h"
@@ -2038,7 +2034,7 @@ void LCD_Clear()
 {
 LCD_Command(0x01);
 }
-# 23 "mainBT.c" 2
+# 19 "mainBT.c" 2
 
 # 1 "./BT.h" 1
 
@@ -2098,18 +2094,22 @@ char BT_get_char(void) {
         return 0;
     }
 }
-# 24 "mainBT.c" 2
+# 20 "mainBT.c" 2
 
 int door_CM = 60;
 int wifiCounter = 1;
-
 int count3 =0;
 int count2 =0;
 int count1 =0;
+char c3;
+char c2;
+char c1;
 void updateWifiCounter(void);
+void person150_170(void);
+void person170_190(void);
+void personOver_190(void);
 
-void main(void)
-{
+void main(void){
   TRISB = 0;
   TRISC2 = 0;
   TRISC3 = 0;
@@ -2143,114 +2143,93 @@ void main(void)
   float distance3;
 
 
-  char c3;
-  char c2;
-  char c1;
 
-   LCD_init();
-   LCD_Clear();
-   LCD_Command(0x80);
-   LCD_string("before While");
-   _delay((unsigned long)((500)*(4000000/4000.0)));
+  Initialize_Bluetooth();
+  LCD_init();
+  LCD_Clear();
+  LCD_Command(0x80);
+  LCD_string("5-7 7-9 over 9");
+  LCD_Command(0xC0);
+  LCD_string("0");
+  LCD_Command(0xC5);
+  LCD_string("0");
+  LCD_Command(0xCC);
+  LCD_string("0");
+  _delay((unsigned long)((500)*(4000000/4000.0)));
 
 
-   LCD_Clear();
-   LCD_Command(0x80);
-   LCD_string("5-7 7-9 over 9");
-   LCD_Command(0xC0);
-   LCD_string("0");
-   LCD_Command(0xC5);
-   LCD_string("0");
-   LCD_Command(0xCC);
-   LCD_string("0");
-   _delay((unsigned long)((500)*(4000000/4000.0)));
-
-   Initialize_Bluetooth();
-    while(1)
-  {
-        RD1=0;
-        RD2=0;
-        RD3=0;
-# 104 "mainBT.c"
-        updateWifiCounter();
-        _delay((unsigned long)((50)*(4000000/4000.0)));
-
-      distance3 =dist3();
-      if (distance3 >60)
-      {
-          _delay((unsigned long)((500)*(4000000/4000.0)));
-
+  while(1){
+      RD1=0;
+      RD2=0;
+      RD3=0;
+      updateWifiCounter();
+      _delay((unsigned long)((50)*(4000000/4000.0)));
+      distance3 = dist3();
+      if(distance3 > door_CM){_delay((unsigned long)((500)*(4000000/4000.0)));}
+      if(distance3 < door_CM){
+        RD1=1;
+        distance2=dist2();
+        if(distance2 > door_CM){person150_170();}
+        if(distance2 < door_CM){
+            RD2=1;
+            distance1= dist1();
+            if(distance1 > door_CM){person170_190();}
+            if(distance1 < door_CM){
+                RD3=1;
+                personOver_190();
+            }
+         }
       }
-      if(distance3 <60){
-         RD1=1;
-         distance2=dist2();
-         if(distance2>60)
-         {
-
-
-            LCD_Command(0xC0);
-            count3++;
-            c3=itoa(count3);
-            LCD_string(c3);
-
-            BT_load_string("People between 150-170:  ");
-            broadcast_BT();
-            BT_load_string(c3);
-            broadcast_BT();
-            BT_load_string("\n");
-            broadcast_BT();
-            BT_load_string("------------------------\n");
-            broadcast_BT();
-              _delay((unsigned long)((500)*(4000000/4000.0)));
-         }
-
-         if(distance2<60){
-             RD2=1;
-             distance1= dist1();
-             if(distance1>60){
-
-
-             LCD_Command(0xC5);
-             count2++;
-             c2=itoa(count2);
-             LCD_string(c2);
-             BT_load_string("People between 170-190:  ");
-             broadcast_BT();
-                BT_load_string(c2);
-                broadcast_BT();
-                BT_load_string("\n");
-                broadcast_BT();
-                BT_load_string("------------------------\n");
-                broadcast_BT();
-              _delay((unsigned long)((500)*(4000000/4000.0)));
-
-         }
-             if(distance1<60){
-
-                 RD3=1;
-                 LCD_Command(0xCC);
-                 count1++;
-                 c1=itoa(count1);
-                 LCD_string(c1);
-                 BT_load_string("People over 190:  ");
-                 broadcast_BT();
-                 BT_load_string(c1);
-                 broadcast_BT();
-                 BT_load_string("\n");
-                 broadcast_BT();
-                 BT_load_string("------------------------\n");
-                 broadcast_BT();
-                 _delay((unsigned long)((500)*(4000000/4000.0)));
-             }
-
-         }
-
-
-      }
-
-
   }
+}
 
+void person150_170(void){
+    LCD_Command(0xC0);
+    count3++;
+    c3=itoa(count3);
+    LCD_string(c3);
+
+    BT_load_string("People between 150-170:  ");
+    broadcast_BT();
+    BT_load_string(c3);
+    broadcast_BT();
+    BT_load_string("\n");
+    broadcast_BT();
+    BT_load_string("------------------------\n");
+    broadcast_BT();
+    _delay((unsigned long)((500)*(4000000/4000.0)));
+}
+
+void person170_190(void){
+    LCD_Command(0xC5);
+    count2++;
+    c2=itoa(count2);
+    LCD_string(c2);
+    BT_load_string("People between 170-190:  ");
+    broadcast_BT();
+    BT_load_string(c2);
+    broadcast_BT();
+    BT_load_string("\n");
+    broadcast_BT();
+    BT_load_string("------------------------\n");
+    broadcast_BT();
+  _delay((unsigned long)((500)*(4000000/4000.0)));
+}
+
+void personOver_190(void){
+    LCD_Command(0xCC);
+    count1++;
+    c1=itoa(count1);
+    LCD_string(c1);
+    BT_load_string("People over 190:  ");
+    broadcast_BT();
+    BT_load_string(c1);
+    broadcast_BT();
+    BT_load_string("\n");
+    broadcast_BT();
+    BT_load_string("------------------------\n");
+    broadcast_BT();
+    _delay((unsigned long)((500)*(4000000/4000.0)));
 }
 
 void updateWifiCounter (void){
