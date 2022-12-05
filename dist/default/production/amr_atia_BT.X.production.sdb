@@ -3,6 +3,14 @@
 [d edition pro ]
 [d chip 16F877A ]
 [d frameptr 0 ]
+"4 D:\amr_atia_BT.X/BT.h
+[v _Initialize_Bluetooth Initialize_Bluetooth `(v  1 e 1 0 ]
+"23
+[v _BT_load_char BT_load_char `(v  1 e 1 0 ]
+"31
+[v _BT_load_string BT_load_string `(v  1 e 1 0 ]
+"38
+[v _broadcast_BT broadcast_BT `(v  1 e 1 0 ]
 "16 D:\amr_atia_BT.X/LCD.h
 [v _LCD_Data LCD_Data `(v  1 e 1 0 ]
 "27
@@ -39,14 +47,40 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"28 D:\amr_atia_BT.X\mainBT.c
+"33 D:\amr_atia_BT.X\mainBT.c
 [v _main main `(v  1 e 1 0 ]
+"185
+[v _updateWifiCounter updateWifiCounter `(v  1 e 1 0 ]
 "217 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h
 [v _PORTB PORTB `VEuc  1 e 1 @6 ]
 "635
 [v _TMR1 TMR1 `VEus  1 e 2 @14 ]
+"1060
+[v _TXREG TXREG `VEuc  1 e 1 @25 ]
+"1067
+[v _RCREG RCREG `VEuc  1 e 1 @26 ]
 "1376
 [v _TRISB TRISB `VEuc  1 e 1 @134 ]
+"2081
+[v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
+"2421
+[v _BRGH BRGH `VEb  1 e 0 @1218 ]
+"2520
+[v _CREN CREN `VEb  1 e 0 @196 ]
+"2619
+[v _OERR OERR `VEb  1 e 0 @193 ]
+"2661
+[v _RA0 RA0 `VEb  1 e 0 @40 ]
+"2664
+[v _RA1 RA1 `VEb  1 e 0 @41 ]
+"2667
+[v _RA2 RA2 `VEb  1 e 0 @42 ]
+"2670
+[v _RA3 RA3 `VEb  1 e 0 @43 ]
+"2673
+[v _RA4 RA4 `VEb  1 e 0 @44 ]
+"2676
+[v _RA5 RA5 `VEb  1 e 0 @45 ]
 "2715
 [v _RC2 RC2 `VEb  1 e 0 @58 ]
 "2718
@@ -55,6 +89,8 @@
 [v _RC4 RC4 `VEb  1 e 0 @60 ]
 "2724
 [v _RC5 RC5 `VEb  1 e 0 @61 ]
+"2748
+[v _RCIF RCIF `VEb  1 e 0 @101 ]
 "2754
 [v _RD0 RD0 `VEb  1 e 0 @64 ]
 "2757
@@ -71,6 +107,12 @@
 [v _RD6 RD6 `VEb  1 e 0 @70 ]
 "2775
 [v _RD7 RD7 `VEb  1 e 0 @71 ]
+"2799
+[v _RX9 RX9 `VEb  1 e 0 @198 ]
+"2817
+[v _SPEN SPEN `VEb  1 e 0 @199 ]
+"2847
+[v _SYNC SYNC `VEb  1 e 0 @1220 ]
 "2862
 [v _T1CKPS0 T1CKPS0 `VEb  1 e 0 @132 ]
 "2865
@@ -79,6 +121,18 @@
 [v _TMR1CS TMR1CS `VEb  1 e 0 @129 ]
 "2898
 [v _TMR1ON TMR1ON `VEb  1 e 0 @128 ]
+"2922
+[v _TRISA0 TRISA0 `VEb  1 e 0 @1064 ]
+"2925
+[v _TRISA1 TRISA1 `VEb  1 e 0 @1065 ]
+"2928
+[v _TRISA2 TRISA2 `VEb  1 e 0 @1066 ]
+"2931
+[v _TRISA3 TRISA3 `VEb  1 e 0 @1067 ]
+"2934
+[v _TRISA4 TRISA4 `VEb  1 e 0 @1068 ]
+"2937
+[v _TRISA5 TRISA5 `VEb  1 e 0 @1069 ]
 "2970
 [v _TRISC2 TRISC2 `VEb  1 e 0 @1082 ]
 "2973
@@ -87,6 +141,10 @@
 [v _TRISC4 TRISC4 `VEb  1 e 0 @1084 ]
 "2979
 [v _TRISC5 TRISC5 `VEb  1 e 0 @1085 ]
+"2982
+[v _TRISC6 TRISC6 `VEb  1 e 0 @1086 ]
+"2985
+[v _TRISC7 TRISC7 `VEb  1 e 0 @1087 ]
 "2988
 [v _TRISD0 TRISD0 `VEb  1 e 0 @1088 ]
 "2991
@@ -103,28 +161,49 @@
 [v _TRISD6 TRISD6 `VEb  1 e 0 @1094 ]
 "3009
 [v _TRISD7 TRISD7 `VEb  1 e 0 @1095 ]
-"28 D:\amr_atia_BT.X\mainBT.c
+"3021
+[v _TRMT TRMT `VEb  1 e 0 @1217 ]
+"3027
+[v _TX9 TX9 `VEb  1 e 0 @1222 ]
+"3036
+[v _TXEN TXEN `VEb  1 e 0 @1221 ]
+"3042
+[v _TXIF TXIF `VEb  1 e 0 @100 ]
+"26 D:\amr_atia_BT.X\mainBT.c
+[v _wifiCounter wifiCounter `i  1 e 2 0 ]
+"28
+[v _count3 count3 `i  1 e 2 0 ]
+"29
+[v _count2 count2 `i  1 e 2 0 ]
+"30
+[v _count1 count1 `i  1 e 2 0 ]
+"33
 [v _main main `(v  1 e 1 0 ]
 {
-"57
-[v main@distance3 distance3 `f  1 a 4 55 ]
-"56
-[v main@distance2 distance2 `f  1 a 4 51 ]
-"55
-[v main@distance1 distance1 `f  1 a 4 47 ]
-"61
-[v main@count1 count1 `i  1 a 2 42 ]
-"60
-[v main@count2 count2 `i  1 a 2 40 ]
-"59
-[v main@count3 count3 `i  1 a 2 38 ]
+"65
+[v main@distance3 distance3 `f  1 a 4 46 ]
 "64
-[v main@c1 c1 `uc  1 a 1 46 ]
+[v main@distance2 distance2 `f  1 a 4 42 ]
 "63
-[v main@c2 c2 `uc  1 a 1 45 ]
-"62
-[v main@c3 c3 `uc  1 a 1 44 ]
-"138
+[v main@distance1 distance1 `f  1 a 4 38 ]
+"70
+[v main@c1 c1 `uc  1 a 1 52 ]
+"69
+[v main@c2 c2 `uc  1 a 1 51 ]
+"68
+[v main@c3 c3 `uc  1 a 1 50 ]
+"183
+} 0
+"185
+[v _updateWifiCounter updateWifiCounter `(v  1 e 1 0 ]
+{
+"244
+[v updateWifiCounter@temp_167 temp `i  1 a 2 4 ]
+"220
+[v updateWifiCounter@temp_166 temp `i  1 a 2 2 ]
+"194
+[v updateWifiCounter@temp temp `i  1 a 2 0 ]
+"264
 } 0
 "52 D:\amr_atia_BT.X/LCD.h
 [v _itoa itoa `(*.4uc  1 e 1 0 ]
@@ -219,6 +298,11 @@
 [v ___fldiv@b b `d  1 p 4 4 ]
 "185
 } 0
+"38 D:\amr_atia_BT.X/BT.h
+[v _broadcast_BT broadcast_BT `(v  1 e 1 0 ]
+{
+"41
+} 0
 "4 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\flge.c
 [v ___flge __flge `(b  1 e 0 0 ]
 {
@@ -262,4 +346,23 @@
 "29
 [v LCD_Command@cmd cmd `uc  1 a 1 2 ]
 "35
+} 0
+"4 D:\amr_atia_BT.X/BT.h
+[v _Initialize_Bluetooth Initialize_Bluetooth `(v  1 e 1 0 ]
+{
+"19
+} 0
+"31
+[v _BT_load_string BT_load_string `(v  1 e 1 0 ]
+{
+[v BT_load_string@string string `*.26uc  1 p 2 1 ]
+"34
+} 0
+"23
+[v _BT_load_char BT_load_char `(v  1 e 1 0 ]
+{
+[v BT_load_char@byte byte `uc  1 a 1 wreg ]
+[v BT_load_char@byte byte `uc  1 a 1 wreg ]
+[v BT_load_char@byte byte `uc  1 a 1 0 ]
+"27
 } 0
