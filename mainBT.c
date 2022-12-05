@@ -94,8 +94,8 @@ void main(void){
             RD2=1;                                         // Turn on LED 170
             distance1= dist1();                            // go get distance at 190 and store it in distance1
             if(distance1 > door_CM){person170_190();}      // no person at 190 --> PERSON (170 - 190)
-            if(distance1 < door_CM){                       // person detected at 190 
-                RD3=1;                                     // Turn on LED 170
+            if(distance1 < door_CM){                       // person detected at 190 --> PERSON (over 190)
+                RD3=1;                                     // Turn on LED 190
                 personOver_190(); 
             }    
          }
@@ -118,6 +118,7 @@ void person150_170(void){
     BT_load_string("------------------------\n");
     broadcast_BT();
     __delay_ms(500);
+    wifiCounter = 1;
 }
 //----------------------------------------------------------
 void person170_190(void){
@@ -134,6 +135,7 @@ void person170_190(void){
     BT_load_string("------------------------\n");
     broadcast_BT();
   __delay_ms(500);
+  wifiCounter = 2;
 }
 //-----------------------------------------------------------
 void personOver_190(void){
@@ -150,6 +152,7 @@ void personOver_190(void){
     BT_load_string("------------------------\n");
     broadcast_BT();
     __delay_ms(500);
+    wifiCounter = 3;
 }
 //-----------------------------------------------------------
 void updateWifiCounter (void){
@@ -176,11 +179,9 @@ void updateWifiCounter (void){
         count3 = count3/2;
         temp = count3%2;
         if (temp ==1){RA5 = 1;}
-        if (temp ==0){RA5 = 0;} 
-        
-        wifiCounter = 2;
-        
+        if (temp ==0){RA5 = 0;}    
     }
+    //------------------------------
     if(wifiCounter == 2){
         // Send select counter 1 
         RA0 = 1;
@@ -203,8 +204,8 @@ void updateWifiCounter (void){
         temp = count2%2;
         if (temp ==1){RA5 = 1;}
         if (temp ==0){RA5 = 0;} 
-        
     }
+    //-----------------------------------
     if(wifiCounter == 3){
         // Send select counter 1 
         RA0 = 0;
@@ -227,8 +228,5 @@ void updateWifiCounter (void){
         temp = count1%2;
         if (temp ==1){RA5 = 1;}
         if (temp ==0){RA5 = 0;} 
-        wifiCounter = 1;
-        
     }
-    
 }
