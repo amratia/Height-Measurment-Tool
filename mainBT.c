@@ -19,14 +19,7 @@
 #include "LCD.h"
 #include "BT.h"
 int door_CM = 60;
-int wifiCounter = 1; 
-int count3 =0;
-int count2 =0;
-int count1 =0;
-char c3;
-char c2;
-char c1;
-void updateWifiCounter(void); 
+
 void person150_170(void);
 void person170_190(void);
 void personOver_190(void);
@@ -52,19 +45,21 @@ void main(void){
   T1CKPS1 = 0;
   // clock select for timers ------------------------------
   TMR1CS = 0;
-  // PINs for WIFI ESP8266 Module --------------------------- 0 is output
-  TRISA0 = 0; // select counter
-  TRISA1 = 0; // select counter
-  TRISA2 = 0; // Send counter
-  TRISA3 = 0; // Send counter
-  TRISA4 = 0; // Send counter
-  TRISA5 = 0; // Send counter
    
   float distance1;
   float distance2;
   float distance3;
+  
+  int count3 = 0;
+  int count2 = 0;
+  int count1 = 0;
+  
+  unsigned char c3;
+  unsigned char c2;
+  unsigned char c1;
      
   Initialize_Bluetooth();
+  
   LCD_init();
   LCD_Clear();
   LCD_Command(0x80);
@@ -79,154 +74,81 @@ void main(void){
    
 //------------------------------------------------------------------------While Loop inside Main
   while(1){
-      RD1=0; // LED 150
-      RD2=0; // LED 170
-      RD3=0; // LED 190  
-      updateWifiCounter();
-      __delay_ms(50);
-      distance3 = dist3();                                 // go get distance at 150 and store it in distance3
-      if(distance3 > door_CM){__delay_ms(500);}            // no person at 150 --> do Nothing
-      if(distance3 < door_CM){                             // person detected at 150
-        RD1=1;                                             // Turn on LED 150
-        distance2=dist2();                                 // go get distance at 170 and store it in distance2
-        if(distance2 > door_CM){person150_170();}          // no person at 170 --> PERSON (150 - 170)  
-        if(distance2 < door_CM){                           // Person at 170
-            RD2=1;                                         // Turn on LED 170
-            distance1= dist1();                            // go get distance at 190 and store it in distance1
-            if(distance1 > door_CM){person170_190();}      // no person at 190 --> PERSON (170 - 190)
-            if(distance1 < door_CM){                       // person detected at 190 --> PERSON (over 190)
-                RD3=1;                                     // Turn on LED 190
-                personOver_190(); 
-            }    
-         }
-      }
+    RD1=0; // LED 150
+    RD2=0; // LED 170
+    RD3=0; // LED 190  
+    __delay_ms(50);
+    distance3 = dist3();                         // go get distance at 150 and store it in distance3
+    if(distance3 > door_CM){__delay_ms(500);}    // no person at 150 --> do Nothing
+    if(distance3 < door_CM){                     // person detected at 150
+      RD1=1;                                     // Turn on LED 150
+      distance2=dist2();                         // go get distance at 170 and store it in distance2
+      if(distance2 > door_CM){                   // no person at 170 --> PERSON (150 - 170) 
+        count3 = count3 + 1;
+        c3=itoa(count3);
+        LCD_Command(0xC0); LCD_string(c3);
+        BT_load_char(count3);
+        __delay_ms(1000);
+      } // End if PERSON (150 - 170)           
+      if(distance2 < door_CM){             // Person at 170
+          RD2=1;                           // Turn on LED 170
+          distance1= dist1();              // go get distance at 190 and store it in distance1
+          if(distance1 > door_CM){         // no person at 190 --> PERSON (170 - 190)
+            count2 = count2 + 1;
+            c2=itoa(count2);
+            LCD_Command(0xC5); LCD_string(c2);
+            BT_load_char(50+count2);
+            __delay_ms(1000);
+          } // End if PERSON (170 - 190)      
+          if(distance1 < door_CM){         // person detected at 190 --> PERSON (over 190)
+            RD3=1;                         // Turn on LED 190
+            count1 = count1 + 1;
+            c1=itoa(count1);
+            LCD_Command(0xCC); LCD_string(c1);
+            BT_load_char(100+count1);
+            __delay_ms(1000);
+          } // End if PERSON (over 190)    
+       }
+    }
   } // End While 
 } // End Main
-//---------------------------------------------------------------------
-void person150_170(void){
-    LCD_Command(0xC0);
-    count3++;
-    c3=itoa(count3);
-    LCD_string(c3);
-    //------------------- BT update
-    BT_load_string("People between 150-170:  ");
-    broadcast_BT();
-    BT_load_string(c3);
-    broadcast_BT();
-    BT_load_string("\n");
-    broadcast_BT();
-    BT_load_string("------------------------\n");
-    broadcast_BT();
-    __delay_ms(500);
-    wifiCounter = 1;
-}
-//----------------------------------------------------------
-void person170_190(void){
-    LCD_Command(0xC5);
-    count2++;
-    c2=itoa(count2);
-    LCD_string(c2);
-    BT_load_string("People between 170-190:  ");
-    broadcast_BT();
-    BT_load_string(c2);
-    broadcast_BT();
-    BT_load_string("\n");
-    broadcast_BT();
-    BT_load_string("------------------------\n");
-    broadcast_BT();
-  __delay_ms(500);
-  wifiCounter = 2;
-}
-//-----------------------------------------------------------
-void personOver_190(void){
-    LCD_Command(0xCC);
-    count1++;
-    c1=itoa(count1);
-    LCD_string(c1);
-    BT_load_string("People over 190:  ");
-    broadcast_BT();
-    BT_load_string(c1);
-    broadcast_BT();
-    BT_load_string("\n");
-    broadcast_BT();
-    BT_load_string("------------------------\n");
-    broadcast_BT();
-    __delay_ms(500);
-    wifiCounter = 3;
-}
-//-----------------------------------------------------------
-void updateWifiCounter (void){
-    // send data and select counter corresponding to wifiCount 
-    // ex: wifiCount = 1 --> send counter 1 and select counter 1 && wifiCount++ 
-    if(wifiCounter == 1){ 
-        // Send select counter 1 
-        RA0 = 0;
-        RA1 = 0;
-        // Send Data on 
-        // count3 is counter 1 at 150 cm
-        int temp;
-        temp = count3%2;
-        if (temp ==1){RA2 = 1;}
-        if (temp ==0){RA2 = 0;} 
-        count3 = count3/2;
-        temp = count3%2;
-        if (temp ==1){RA3 = 1;}
-        if (temp ==0){RA3 = 0;} 
-        count3 = count3/2;
-        temp = count3%2;
-        if (temp ==1){RA4 = 1;}
-        if (temp ==0){RA4 = 0;} 
-        count3 = count3/2;
-        temp = count3%2;
-        if (temp ==1){RA5 = 1;}
-        if (temp ==0){RA5 = 0;}    
-    }
-    //------------------------------
-    if(wifiCounter == 2){
-        // Send select counter 1 
-        RA0 = 1;
-        RA1 = 0;
-        // Send Data on 
-        // count2 is counter 2 at 170 cm
-        int temp;
-        temp = count2%2;
-        if (temp ==1){RA2 = 1;}
-        if (temp ==0){RA2 = 0;} 
-        count2 = count2/2;
-        temp = count2%2;
-        if (temp ==1){RA3 = 1;}
-        if (temp ==0){RA3 = 0;} 
-        count2 = count2/2;
-        temp = count2%2;
-        if (temp ==1){RA4 = 1;}
-        if (temp ==0){RA4 = 0;} 
-        count2 = count2/2;
-        temp = count2%2;
-        if (temp ==1){RA5 = 1;}
-        if (temp ==0){RA5 = 0;} 
-    }
-    //-----------------------------------
-    if(wifiCounter == 3){
-        // Send select counter 1 
-        RA0 = 0;
-        RA1 = 1;
-        // Send Data on 
-        // count1 is counter 3 at 190 cm
-        int temp;
-        temp = count1%2;
-        if (temp ==1){RA2 = 1;}
-        if (temp ==0){RA2 = 0;} 
-        count1 = count1/2;
-        temp = count1%2;
-        if (temp ==1){RA3 = 1;}
-        if (temp ==0){RA3 = 0;} 
-        count1 = count1/2;
-        temp = count1%2;
-        if (temp ==1){RA4 = 1;}
-        if (temp ==0){RA4 = 0;} 
-        count1 = count1/2;
-        temp = count1%2;
-        if (temp ==1){RA5 = 1;}
-        if (temp ==0){RA5 = 0;} 
-    }
-}
+
+
+//------------------------------------------------------------------------------------------------------
+//--------USE THESE FUNCTIONS IF USING BLUETOOTH MODULE AT THE RX/TX PINS-------------------------------
+//------------------------------------------------------------------------------------------------------
+//void person150_170(void){
+//    //------------------- BT update
+//    BT_load_string("People between 150-170:  ");
+//    broadcast_BT();
+//    BT_load_string(c3);
+//    broadcast_BT();
+//    BT_load_string("\n");
+//    broadcast_BT();
+//    BT_load_string("------------------------\n");
+//    broadcast_BT();
+//}
+////----------------------------------------------------------
+//void person170_190(void){
+//    //------------------- BT update
+//    BT_load_string("People between 170-190:  ");
+//    broadcast_BT();
+//    BT_load_string(c2);
+//    broadcast_BT();
+//    BT_load_string("\n");
+//    broadcast_BT();
+//    BT_load_string("------------------------\n");
+//    broadcast_BT();
+//}
+////-----------------------------------------------------------
+//void personOver_190(void){
+//    //------------------- BT update
+//    BT_load_string("People over 190:  ");
+//    broadcast_BT();
+//    BT_load_string(c1);
+//    broadcast_BT();
+//    BT_load_string("\n");
+//    broadcast_BT();
+//    BT_load_string("------------------------\n");
+//    broadcast_BT();
+//}

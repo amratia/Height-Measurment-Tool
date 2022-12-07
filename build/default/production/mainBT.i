@@ -2001,15 +2001,13 @@ int i;
 for(i=0;str[i]!='\0';i++)
   LCD_Data(str[i]);
 }
-char *itoa(int value)
- {
+
+
+char *itoa(int value){
      static char buffer[12];
      int original = value;
-
      int c = sizeof(buffer)-1;
-
      buffer[c] = 0;
-
      if (value < 0)
          value = -value;
 
@@ -2041,6 +2039,7 @@ LCD_Command(0x01);
 
 
 void Initialize_Bluetooth(){
+
     TRISC6=1;
     TRISC7=1;
 
@@ -2098,13 +2097,8 @@ char BT_get_char(void) {
 
 int door_CM = 60;
 int wifiCounter = 1;
-int count3 =0;
-int count2 =0;
-int count1 =0;
-char c3;
-char c2;
-char c1;
-void updateWifiCounter(void);
+
+void updateWifiCounter(int myCounter);
 void person150_170(void);
 void person170_190(void);
 void personOver_190(void);
@@ -2137,14 +2131,23 @@ void main(void){
   TRISA3 = 0;
   TRISA4 = 0;
   TRISA5 = 0;
+  TRISE0 = 0;
+  TRISE1 = 0;
+  TRISE2 = 0;
 
   float distance1;
   float distance2;
   float distance3;
 
-
+  int count3 = 0;
+  int count2 = 0;
+  int count1 = 0;
+  unsigned char c3;
+  unsigned char c2;
+  unsigned char c1;
 
   Initialize_Bluetooth();
+
   LCD_init();
   LCD_Clear();
   LCD_Command(0x80);
@@ -2159,156 +2162,45 @@ void main(void){
 
 
   while(1){
-      RD1=0;
-      RD2=0;
-      RD3=0;
-      updateWifiCounter();
-      _delay((unsigned long)((50)*(4000000/4000.0)));
-      distance3 = dist3();
-      if(distance3 > door_CM){_delay((unsigned long)((500)*(4000000/4000.0)));}
-      if(distance3 < door_CM){
-        RD1=1;
-        distance2=dist2();
-        if(distance2 > door_CM){person150_170();}
-        if(distance2 < door_CM){
-            RD2=1;
-            distance1= dist1();
-            if(distance1 > door_CM){person170_190();}
-            if(distance1 < door_CM){
-                RD3=1;
-                personOver_190();
-            }
-         }
+    RD1=0;
+    RD2=0;
+    RD3=0;
+
+    _delay((unsigned long)((50)*(4000000/4000.0)));
+    distance3 = dist3();
+    if(distance3 > door_CM){_delay((unsigned long)((500)*(4000000/4000.0)));}
+    if(distance3 < door_CM){
+      RD1=1;
+      distance2=dist2();
+      if(distance2 > door_CM){
+        count3 = count3 + 1;
+        c3=itoa(count3);
+        LCD_Command(0xC0);
+        LCD_string(c3);
+        BT_load_char(count3);
+        _delay((unsigned long)((1500)*(4000000/4000.0)));
       }
+      if(distance2 < door_CM){
+          RD2=1;
+          distance1= dist1();
+          if(distance1 > door_CM){
+            count2 = count2 + 1;
+            c2=itoa(count2);
+            LCD_Command(0xC5);
+            LCD_string(c2);
+            BT_load_char(50+count2);
+            _delay((unsigned long)((1500)*(4000000/4000.0)));
+          }
+          if(distance1 < door_CM){
+            RD3=1;
+            count1 = count1 + 1;
+            c1=itoa(count1);
+            LCD_Command(0xCC);
+            LCD_string(c1);
+            BT_load_char(100+count1);
+            _delay((unsigned long)((1500)*(4000000/4000.0)));
+          }
+       }
+    }
   }
-}
-
-void person150_170(void){
-    LCD_Command(0xC0);
-    count3++;
-    c3=itoa(count3);
-    LCD_string(c3);
-
-    BT_load_string("People between 150-170:  ");
-    broadcast_BT();
-    BT_load_string(c3);
-    broadcast_BT();
-    BT_load_string("\n");
-    broadcast_BT();
-    BT_load_string("------------------------\n");
-    broadcast_BT();
-    _delay((unsigned long)((500)*(4000000/4000.0)));
-}
-
-void person170_190(void){
-    LCD_Command(0xC5);
-    count2++;
-    c2=itoa(count2);
-    LCD_string(c2);
-    BT_load_string("People between 170-190:  ");
-    broadcast_BT();
-    BT_load_string(c2);
-    broadcast_BT();
-    BT_load_string("\n");
-    broadcast_BT();
-    BT_load_string("------------------------\n");
-    broadcast_BT();
-  _delay((unsigned long)((500)*(4000000/4000.0)));
-}
-
-void personOver_190(void){
-    LCD_Command(0xCC);
-    count1++;
-    c1=itoa(count1);
-    LCD_string(c1);
-    BT_load_string("People over 190:  ");
-    broadcast_BT();
-    BT_load_string(c1);
-    broadcast_BT();
-    BT_load_string("\n");
-    broadcast_BT();
-    BT_load_string("------------------------\n");
-    broadcast_BT();
-    _delay((unsigned long)((500)*(4000000/4000.0)));
-}
-
-void updateWifiCounter (void){
-
-
-    if(wifiCounter == 1){
-
-        RA0 = 0;
-        RA1 = 0;
-
-
-        int temp;
-        temp = count3%2;
-        if (temp ==1){RA2 = 1;}
-        if (temp ==0){RA2 = 0;}
-        count3 = count3/2;
-        temp = count3%2;
-        if (temp ==1){RA3 = 1;}
-        if (temp ==0){RA3 = 0;}
-        count3 = count3/2;
-        temp = count3%2;
-        if (temp ==1){RA4 = 1;}
-        if (temp ==0){RA4 = 0;}
-        count3 = count3/2;
-        temp = count3%2;
-        if (temp ==1){RA5 = 1;}
-        if (temp ==0){RA5 = 0;}
-
-        wifiCounter = 2;
-
-    }
-    if(wifiCounter == 2){
-
-        RA0 = 1;
-        RA1 = 0;
-
-
-        int temp;
-        temp = count2%2;
-        if (temp ==1){RA2 = 1;}
-        if (temp ==0){RA2 = 0;}
-        count2 = count2/2;
-        temp = count2%2;
-        if (temp ==1){RA3 = 1;}
-        if (temp ==0){RA3 = 0;}
-        count2 = count2/2;
-        temp = count2%2;
-        if (temp ==1){RA4 = 1;}
-        if (temp ==0){RA4 = 0;}
-        count2 = count2/2;
-        temp = count2%2;
-        if (temp ==1){RA5 = 1;}
-        if (temp ==0){RA5 = 0;}
-
-    }
-    if(wifiCounter == 3){
-
-        RA0 = 0;
-        RA1 = 1;
-
-
-        int temp;
-        temp = count1%2;
-        if (temp ==1){RA2 = 1;}
-        if (temp ==0){RA2 = 0;}
-        count1 = count1/2;
-        temp = count1%2;
-        if (temp ==1){RA3 = 1;}
-        if (temp ==0){RA3 = 0;}
-        count1 = count1/2;
-        temp = count1%2;
-        if (temp ==1){RA4 = 1;}
-        if (temp ==0){RA4 = 0;}
-        count1 = count1/2;
-        temp = count1%2;
-        if (temp ==1){RA5 = 1;}
-        if (temp ==0){RA5 = 0;}
-        wifiCounter = 1;
-
-    }
-
 }

@@ -154,6 +154,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2937
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 2937: extern volatile __bit TRISA5 __attribute__((address(0x42D)));
 [v _TRISA5 `Vb ~T0 @X0 0 e@1069 ]
+"3012
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 3012: extern volatile __bit TRISE0 __attribute__((address(0x448)));
+[v _TRISE0 `Vb ~T0 @X0 0 e@1096 ]
+"3015
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 3015: extern volatile __bit TRISE1 __attribute__((address(0x449)));
+[v _TRISE1 `Vb ~T0 @X0 0 e@1097 ]
+"3018
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 3018: extern volatile __bit TRISE2 __attribute__((address(0x44A)));
+[v _TRISE2 `Vb ~T0 @X0 0 e@1098 ]
 "2757
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 2757: extern volatile __bit RD1 __attribute__((address(0x41)));
 [v _RD1 `Vb ~T0 @X0 0 e@65 ]
@@ -163,36 +172,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2763
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 2763: extern volatile __bit RD3 __attribute__((address(0x43)));
 [v _RD3 `Vb ~T0 @X0 0 e@67 ]
-"29 mainBT.c
-[; ;mainBT.c: 29: void updateWifiCounter(void);
-[v _updateWifiCounter `(v ~T0 @X0 0 ef ]
-"30
-[; ;mainBT.c: 30: void person150_170(void);
-[v _person150_170 `(v ~T0 @X0 0 ef ]
-"31
-[; ;mainBT.c: 31: void person170_190(void);
-[v _person170_190 `(v ~T0 @X0 0 ef ]
-"32
-[; ;mainBT.c: 32: void personOver_190(void);
-[v _personOver_190 `(v ~T0 @X0 0 ef ]
-"2661 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 2661: extern volatile __bit RA0 __attribute__((address(0x28)));
-[v _RA0 `Vb ~T0 @X0 0 e@40 ]
-"2664
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 2664: extern volatile __bit RA1 __attribute__((address(0x29)));
-[v _RA1 `Vb ~T0 @X0 0 e@41 ]
-"2667
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 2667: extern volatile __bit RA2 __attribute__((address(0x2A)));
-[v _RA2 `Vb ~T0 @X0 0 e@42 ]
-"2670
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 2670: extern volatile __bit RA3 __attribute__((address(0x2B)));
-[v _RA3 `Vb ~T0 @X0 0 e@43 ]
-"2673
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 2673: extern volatile __bit RA4 __attribute__((address(0x2C)));
-[v _RA4 `Vb ~T0 @X0 0 e@44 ]
-"2676
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 2676: extern volatile __bit RA5 __attribute__((address(0x2D)));
-[v _RA5 `Vb ~T0 @X0 0 e@45 ]
 "6 mainBT.c
 [p x FOSC  =  HS  ]
 "7
@@ -700,85 +679,79 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./LCD.h: 51: }
 [e :UE 119 ]
 }
-"52
-[; ;./LCD.h: 52: char *itoa(int value)
+"54
+[; ;./LCD.h: 54: char *itoa(int value){
 [v _itoa `(*uc ~T0 @X0 1 ef1`i ]
-"53
-[; ;./LCD.h: 53:  {
 {
 [e :U _itoa ]
-"52
-[; ;./LCD.h: 52: char *itoa(int value)
 [v _value `i ~T0 @X0 1 r1 ]
-"53
-[; ;./LCD.h: 53:  {
 [f ]
-"54
-[; ;./LCD.h: 54:      static char buffer[12];
-[v F954 `uc ~T0 @X0 -> 12 `i s buffer ]
 "55
-[; ;./LCD.h: 55:      int original = value;
+[; ;./LCD.h: 55:      static char buffer[12];
+[v F954 `uc ~T0 @X0 -> 12 `i s buffer ]
+"56
+[; ;./LCD.h: 56:      int original = value;
 [v _original `i ~T0 @X0 1 a ]
 [e = _original _value ]
 "57
 [; ;./LCD.h: 57:      int c = sizeof(buffer)-1;
 [v _c `i ~T0 @X0 1 a ]
 [e = _c -> - -> # F954 `ui -> -> 1 `i `ui `i ]
-"59
-[; ;./LCD.h: 59:      buffer[c] = 0;
+"58
+[; ;./LCD.h: 58:      buffer[c] = 0;
 [e = *U + &U F954 * -> -> _c `ui `ux -> -> # *U &U F954 `ui `ux -> -> 0 `i `uc ]
-"61
-[; ;./LCD.h: 61:      if (value < 0)
+"59
+[; ;./LCD.h: 59:      if (value < 0)
 [e $ ! < _value -> 0 `i 125  ]
-"62
-[; ;./LCD.h: 62:          value = -value;
+"60
+[; ;./LCD.h: 60:          value = -value;
 [e = _value -U _value ]
 [e :U 125 ]
-"64
-[; ;./LCD.h: 64:      do
+"62
+[; ;./LCD.h: 62:      do
 [e :U 128 ]
-"65
-[; ;./LCD.h: 65:      {
+"63
+[; ;./LCD.h: 63:      {
 {
-"66
-[; ;./LCD.h: 66:          buffer[--c] = (value % 10) + '0';
+"64
+[; ;./LCD.h: 64:          buffer[--c] = (value % 10) + '0';
 [e = *U + &U F954 * -> -> =- _c -> 1 `i `ui `ux -> -> # *U &U F954 `ui `ux -> + -> % _value -> 10 `i `ui -> 48 `ui `uc ]
-"67
-[; ;./LCD.h: 67:          value /= 10;
+"65
+[; ;./LCD.h: 65:          value /= 10;
 [e =/ _value -> 10 `i ]
-"68
-[; ;./LCD.h: 68:      } while (value);
+"66
+[; ;./LCD.h: 66:      } while (value);
 }
 [e $ != _value -> 0 `i 128  ]
 [e :U 127 ]
-"70
-[; ;./LCD.h: 70:      if (original < 0)
+"68
+[; ;./LCD.h: 68:      if (original < 0)
 [e $ ! < _original -> 0 `i 129  ]
-"71
-[; ;./LCD.h: 71:          buffer[--c] = '-';
+"69
+[; ;./LCD.h: 69:          buffer[--c] = '-';
 [e = *U + &U F954 * -> -> =- _c -> 1 `i `ui `ux -> -> # *U &U F954 `ui `ux -> -> 45 `ui `uc ]
 [e :U 129 ]
-"73
-[; ;./LCD.h: 73:      return &buffer[c];
+"71
+[; ;./LCD.h: 71:      return &buffer[c];
 [e ) &U *U + &U F954 * -> -> _c `ui `ux -> -> # *U &U F954 `ui `ux ]
 [e $UE 124  ]
-"74
-[; ;./LCD.h: 74:  }
+"72
+[; ;./LCD.h: 72:  }
 [e :UE 124 ]
 }
-"81
-[; ;./LCD.h: 81: void LCD_Clear()
+"79
+[; ;./LCD.h: 79: void LCD_Clear()
 [v _LCD_Clear `(v ~T0 @X0 1 ef ]
-"82
-[; ;./LCD.h: 82: {
+"80
+[; ;./LCD.h: 80: {
 {
 [e :U _LCD_Clear ]
 [f ]
-"83
-[; ;./LCD.h: 83: LCD_Command(0x01);
+"81
+[; ;./LCD.h: 81: LCD_Command(0x01);
 [e ( _LCD_Command (1 -> -> 1 `i `uc ]
-"84
-[; ;./LCD.h: 84: }
+"82
+[; ;./LCD.h: 82: }
 [e :UE 130 ]
 }
 "4 ./BT.h
@@ -787,160 +760,160 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _Initialize_Bluetooth ]
 [f ]
-"5
-[; ;./BT.h: 5:     TRISC6=1;
-[e = _TRISC6 -> -> 1 `i `b ]
 "6
-[; ;./BT.h: 6:     TRISC7=1;
+[; ;./BT.h: 6:     TRISC6=1;
+[e = _TRISC6 -> -> 1 `i `b ]
+"7
+[; ;./BT.h: 7:     TRISC7=1;
 [e = _TRISC7 -> -> 1 `i `b ]
-"8
-[; ;./BT.h: 8:     BRGH=1;
-[e = _BRGH -> -> 1 `i `b ]
 "9
-[; ;./BT.h: 9:     SPBRG=25;
+[; ;./BT.h: 9:     BRGH=1;
+[e = _BRGH -> -> 1 `i `b ]
+"10
+[; ;./BT.h: 10:     SPBRG=25;
 [e = _SPBRG -> -> 25 `i `uc ]
-"11
-[; ;./BT.h: 11:     SYNC=0;
-[e = _SYNC -> -> 0 `i `b ]
 "12
-[; ;./BT.h: 12:     SPEN=1;
+[; ;./BT.h: 12:     SYNC=0;
+[e = _SYNC -> -> 0 `i `b ]
+"13
+[; ;./BT.h: 13:     SPEN=1;
 [e = _SPEN -> -> 1 `i `b ]
-"14
-[; ;./BT.h: 14:     RX9=0;
-[e = _RX9 -> -> 0 `i `b ]
 "15
-[; ;./BT.h: 15:     TX9=0;
+[; ;./BT.h: 15:     RX9=0;
+[e = _RX9 -> -> 0 `i `b ]
+"16
+[; ;./BT.h: 16:     TX9=0;
 [e = _TX9 -> -> 0 `i `b ]
-"17
-[; ;./BT.h: 17:     TXEN=1;
-[e = _TXEN -> -> 1 `i `b ]
 "18
-[; ;./BT.h: 18:     CREN=1;
-[e = _CREN -> -> 1 `i `b ]
+[; ;./BT.h: 18:     TXEN=1;
+[e = _TXEN -> -> 1 `i `b ]
 "19
-[; ;./BT.h: 19: }
+[; ;./BT.h: 19:     CREN=1;
+[e = _CREN -> -> 1 `i `b ]
+"20
+[; ;./BT.h: 20: }
 [e :UE 131 ]
 }
-"23
-[; ;./BT.h: 23: void BT_load_char(char byte) {
+"24
+[; ;./BT.h: 24: void BT_load_char(char byte) {
 [v _BT_load_char `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _BT_load_char ]
 [v _byte `uc ~T0 @X0 1 r1 ]
 [f ]
-"24
-[; ;./BT.h: 24:     TXREG = byte;
-[e = _TXREG -> _byte `uc ]
 "25
-[; ;./BT.h: 25:     while(!TXIF);
+[; ;./BT.h: 25:     TXREG = byte;
+[e = _TXREG -> _byte `uc ]
+"26
+[; ;./BT.h: 26:     while(!TXIF);
 [e $U 133  ]
 [e :U 134 ]
 [e :U 133 ]
 [e $ ! _TXIF 134  ]
 [e :U 135 ]
-"26
-[; ;./BT.h: 26:     while(!TRMT);
+"27
+[; ;./BT.h: 27:     while(!TRMT);
 [e $U 136  ]
 [e :U 137 ]
 [e :U 136 ]
 [e $ ! _TRMT 137  ]
 [e :U 138 ]
-"27
-[; ;./BT.h: 27: }
+"28
+[; ;./BT.h: 28: }
 [e :UE 132 ]
 }
-"31
-[; ;./BT.h: 31: void BT_load_string(char* string){
+"32
+[; ;./BT.h: 32: void BT_load_string(char* string){
 [v _BT_load_string `(v ~T0 @X0 1 ef1`*uc ]
 {
 [e :U _BT_load_string ]
 [v _string `*uc ~T0 @X0 1 r1 ]
 [f ]
-"32
-[; ;./BT.h: 32:     while(*string)
+"33
+[; ;./BT.h: 33:     while(*string)
 [e $U 140  ]
 [e :U 141 ]
-"33
-[; ;./BT.h: 33:     BT_load_char(*string++);
+"34
+[; ;./BT.h: 34:     BT_load_char(*string++);
 [e ( _BT_load_char (1 *U ++ _string * -> -> 1 `i `x -> -> # *U _string `i `x ]
 [e :U 140 ]
-"32
-[; ;./BT.h: 32:     while(*string)
+"33
+[; ;./BT.h: 33:     while(*string)
 [e $ != -> *U _string `i -> 0 `i 141  ]
 [e :U 142 ]
-"34
-[; ;./BT.h: 34: }
+"35
+[; ;./BT.h: 35: }
 [e :UE 139 ]
 }
-"38
-[; ;./BT.h: 38: void broadcast_BT(){
+"39
+[; ;./BT.h: 39: void broadcast_BT(){
 [v _broadcast_BT `(v ~T0 @X0 1 ef ]
 {
 [e :U _broadcast_BT ]
 [f ]
-"39
-[; ;./BT.h: 39:   TXREG = 13;
-[e = _TXREG -> -> 13 `i `uc ]
 "40
-[; ;./BT.h: 40:   _delay((unsigned long)((300)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 300 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;./BT.h: 40:   TXREG = 13;
+[e = _TXREG -> -> 13 `i `uc ]
 "41
-[; ;./BT.h: 41: }
+[; ;./BT.h: 41:   _delay((unsigned long)((300)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 300 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"42
+[; ;./BT.h: 42: }
 [e :UE 143 ]
 }
-"45
-[; ;./BT.h: 45: char BT_get_char(void) {
+"46
+[; ;./BT.h: 46: char BT_get_char(void) {
 [v _BT_get_char `(uc ~T0 @X0 1 ef ]
 {
 [e :U _BT_get_char ]
 [f ]
-"46
-[; ;./BT.h: 46:     if(OERR){
+"47
+[; ;./BT.h: 47:     if(OERR){
 [e $ ! _OERR 145  ]
 {
-"47
-[; ;./BT.h: 47:         CREN = 0;
-[e = _CREN -> -> 0 `i `b ]
 "48
-[; ;./BT.h: 48:         CREN = 1;
-[e = _CREN -> -> 1 `i `b ]
+[; ;./BT.h: 48:         CREN = 0;
+[e = _CREN -> -> 0 `i `b ]
 "49
-[; ;./BT.h: 49:     }
+[; ;./BT.h: 49:         CREN = 1;
+[e = _CREN -> -> 1 `i `b ]
+"50
+[; ;./BT.h: 50:     }
 }
 [e :U 145 ]
-"50
-[; ;./BT.h: 50:     if(RCIF==1){
+"51
+[; ;./BT.h: 51:     if(RCIF==1){
 [e $ ! == -> _RCIF `i -> 1 `i 146  ]
 {
-"51
-[; ;./BT.h: 51:     while(!RCIF);
+"52
+[; ;./BT.h: 52:     while(!RCIF);
 [e $U 147  ]
 [e :U 148 ]
 [e :U 147 ]
 [e $ ! _RCIF 148  ]
 [e :U 149 ]
-"52
-[; ;./BT.h: 52:     return RCREG;
+"53
+[; ;./BT.h: 53:     return RCREG;
 [e ) -> _RCREG `uc ]
 [e $UE 144  ]
-"53
-[; ;./BT.h: 53:     }
+"54
+[; ;./BT.h: 54:     }
 }
 [e $U 150  ]
-"54
-[; ;./BT.h: 54:     else{
+"55
+[; ;./BT.h: 55:     else{
 [e :U 146 ]
 {
-"55
-[; ;./BT.h: 55:         return 0;
+"56
+[; ;./BT.h: 56:         return 0;
 [e ) -> -> 0 `i `uc ]
 [e $UE 144  ]
-"56
-[; ;./BT.h: 56:     }
+"57
+[; ;./BT.h: 57:     }
 }
 [e :U 150 ]
-"57
-[; ;./BT.h: 57: }
+"58
+[; ;./BT.h: 58: }
 [e :UE 144 ]
 }
 "21 mainBT.c
@@ -955,701 +928,300 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _wifiCounter
 -> 1 `i
 ]
-"23
-[; ;mainBT.c: 23: int count3 =0;
-[v _count3 `i ~T0 @X0 1 e ]
-[i _count3
--> 0 `i
-]
-"24
-[; ;mainBT.c: 24: int count2 =0;
-[v _count2 `i ~T0 @X0 1 e ]
-[i _count2
--> 0 `i
-]
-"25
-[; ;mainBT.c: 25: int count1 =0;
-[v _count1 `i ~T0 @X0 1 e ]
-[i _count1
--> 0 `i
-]
-"26
-[; ;mainBT.c: 26: char c3;
-[v _c3 `uc ~T0 @X0 1 e ]
-"27
-[; ;mainBT.c: 27: char c2;
-[v _c2 `uc ~T0 @X0 1 e ]
-"28
-[; ;mainBT.c: 28: char c1;
-[v _c1 `uc ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"34
-[; ;mainBT.c: 34: void main(void){
+"29
+[; ;mainBT.c: 29: void main(void){
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"35
-[; ;mainBT.c: 35:   TRISB = 0;
+"30
+[; ;mainBT.c: 30:   TRISB = 0;
 [e = _TRISB -> -> 0 `i `uc ]
-"36
-[; ;mainBT.c: 36:   TRISC2 = 0;
+"31
+[; ;mainBT.c: 31:   TRISC2 = 0;
 [e = _TRISC2 -> -> 0 `i `b ]
-"37
-[; ;mainBT.c: 37:   TRISC3 = 0;
+"32
+[; ;mainBT.c: 32:   TRISC3 = 0;
 [e = _TRISC3 -> -> 0 `i `b ]
-"38
-[; ;mainBT.c: 38:   TRISD0 = 0;
+"33
+[; ;mainBT.c: 33:   TRISD0 = 0;
 [e = _TRISD0 -> -> 0 `i `b ]
-"40
-[; ;mainBT.c: 40:   TRISD1 = 0;
+"35
+[; ;mainBT.c: 35:   TRISD1 = 0;
 [e = _TRISD1 -> -> 0 `i `b ]
-"41
-[; ;mainBT.c: 41:   TRISD2 = 0;
+"36
+[; ;mainBT.c: 36:   TRISD2 = 0;
 [e = _TRISD2 -> -> 0 `i `b ]
-"42
-[; ;mainBT.c: 42:   TRISD3 = 0;
+"37
+[; ;mainBT.c: 37:   TRISD3 = 0;
 [e = _TRISD3 -> -> 0 `i `b ]
-"44
-[; ;mainBT.c: 44:   TRISD7 = 0;
+"39
+[; ;mainBT.c: 39:   TRISD7 = 0;
 [e = _TRISD7 -> -> 0 `i `b ]
-"45
-[; ;mainBT.c: 45:   TRISD6 = 1;
+"40
+[; ;mainBT.c: 40:   TRISD6 = 1;
 [e = _TRISD6 -> -> 1 `i `b ]
-"46
-[; ;mainBT.c: 46:   TRISD5 = 0;
+"41
+[; ;mainBT.c: 41:   TRISD5 = 0;
 [e = _TRISD5 -> -> 0 `i `b ]
-"47
-[; ;mainBT.c: 47:   TRISD4 = 1;
+"42
+[; ;mainBT.c: 42:   TRISD4 = 1;
 [e = _TRISD4 -> -> 1 `i `b ]
-"48
-[; ;mainBT.c: 48:   TRISC5 = 0;
+"43
+[; ;mainBT.c: 43:   TRISC5 = 0;
 [e = _TRISC5 -> -> 0 `i `b ]
-"49
-[; ;mainBT.c: 49:   TRISC4 = 1;
+"44
+[; ;mainBT.c: 44:   TRISC4 = 1;
 [e = _TRISC4 -> -> 1 `i `b ]
-"51
-[; ;mainBT.c: 51:   T1CKPS0 = 0;
+"46
+[; ;mainBT.c: 46:   T1CKPS0 = 0;
 [e = _T1CKPS0 -> -> 0 `i `b ]
-"52
-[; ;mainBT.c: 52:   T1CKPS1 = 0;
+"47
+[; ;mainBT.c: 47:   T1CKPS1 = 0;
 [e = _T1CKPS1 -> -> 0 `i `b ]
-"54
-[; ;mainBT.c: 54:   TMR1CS = 0;
+"49
+[; ;mainBT.c: 49:   TMR1CS = 0;
 [e = _TMR1CS -> -> 0 `i `b ]
-"56
-[; ;mainBT.c: 56:   TRISA0 = 0;
+"51
+[; ;mainBT.c: 51:   TRISA0 = 0;
 [e = _TRISA0 -> -> 0 `i `b ]
-"57
-[; ;mainBT.c: 57:   TRISA1 = 0;
+"52
+[; ;mainBT.c: 52:   TRISA1 = 0;
 [e = _TRISA1 -> -> 0 `i `b ]
-"58
-[; ;mainBT.c: 58:   TRISA2 = 0;
+"53
+[; ;mainBT.c: 53:   TRISA2 = 0;
 [e = _TRISA2 -> -> 0 `i `b ]
-"59
-[; ;mainBT.c: 59:   TRISA3 = 0;
+"54
+[; ;mainBT.c: 54:   TRISA3 = 0;
 [e = _TRISA3 -> -> 0 `i `b ]
-"60
-[; ;mainBT.c: 60:   TRISA4 = 0;
+"55
+[; ;mainBT.c: 55:   TRISA4 = 0;
 [e = _TRISA4 -> -> 0 `i `b ]
-"61
-[; ;mainBT.c: 61:   TRISA5 = 0;
+"56
+[; ;mainBT.c: 56:   TRISA5 = 0;
 [e = _TRISA5 -> -> 0 `i `b ]
-"63
-[; ;mainBT.c: 63:   float distance1;
+"57
+[; ;mainBT.c: 57:   TRISE0 = 0;
+[e = _TRISE0 -> -> 0 `i `b ]
+"58
+[; ;mainBT.c: 58:   TRISE1 = 0;
+[e = _TRISE1 -> -> 0 `i `b ]
+"59
+[; ;mainBT.c: 59:   TRISE2 = 0;
+[e = _TRISE2 -> -> 0 `i `b ]
+"61
+[; ;mainBT.c: 61:   float distance1;
 [v _distance1 `f ~T0 @X0 1 a ]
-"64
-[; ;mainBT.c: 64:   float distance2;
+"62
+[; ;mainBT.c: 62:   float distance2;
 [v _distance2 `f ~T0 @X0 1 a ]
-"65
-[; ;mainBT.c: 65:   float distance3;
+"63
+[; ;mainBT.c: 63:   float distance3;
 [v _distance3 `f ~T0 @X0 1 a ]
+"65
+[; ;mainBT.c: 65:   int count3 = 0;
+[v _count3 `i ~T0 @X0 1 a ]
+[e = _count3 -> 0 `i ]
+"66
+[; ;mainBT.c: 66:   int count2 = 0;
+[v _count2 `i ~T0 @X0 1 a ]
+[e = _count2 -> 0 `i ]
+"67
+[; ;mainBT.c: 67:   int count1 = 0;
+[v _count1 `i ~T0 @X0 1 a ]
+[e = _count1 -> 0 `i ]
+"68
+[; ;mainBT.c: 68:   unsigned char c3;
+[v _c3 `uc ~T0 @X0 1 a ]
 "69
-[; ;mainBT.c: 69:   Initialize_Bluetooth();
-[e ( _Initialize_Bluetooth ..  ]
+[; ;mainBT.c: 69:   unsigned char c2;
+[v _c2 `uc ~T0 @X0 1 a ]
 "70
-[; ;mainBT.c: 70:   LCD_init();
-[e ( _LCD_init ..  ]
-"71
-[; ;mainBT.c: 71:   LCD_Clear();
-[e ( _LCD_Clear ..  ]
+[; ;mainBT.c: 70:   unsigned char c1;
+[v _c1 `uc ~T0 @X0 1 a ]
 "72
-[; ;mainBT.c: 72:   LCD_Command(0x80);
-[e ( _LCD_Command (1 -> -> 128 `i `uc ]
-"73
-[; ;mainBT.c: 73:   LCD_string("5-7 7-9 over 9");
-[e ( _LCD_string (1 :s 1C ]
+[; ;mainBT.c: 72:   Initialize_Bluetooth();
+[e ( _Initialize_Bluetooth ..  ]
 "74
-[; ;mainBT.c: 74:   LCD_Command(0xC0);
-[e ( _LCD_Command (1 -> -> 192 `i `uc ]
+[; ;mainBT.c: 74:   LCD_init();
+[e ( _LCD_init ..  ]
 "75
-[; ;mainBT.c: 75:   LCD_string("0");
-[e ( _LCD_string (1 :s 2C ]
+[; ;mainBT.c: 75:   LCD_Clear();
+[e ( _LCD_Clear ..  ]
 "76
-[; ;mainBT.c: 76:   LCD_Command(0xC5);
-[e ( _LCD_Command (1 -> -> 197 `i `uc ]
+[; ;mainBT.c: 76:   LCD_Command(0x80);
+[e ( _LCD_Command (1 -> -> 128 `i `uc ]
 "77
-[; ;mainBT.c: 77:   LCD_string("0");
-[e ( _LCD_string (1 :s 3C ]
+[; ;mainBT.c: 77:   LCD_string("5-7 7-9 over 9");
+[e ( _LCD_string (1 :s 1C ]
 "78
-[; ;mainBT.c: 78:   LCD_Command(0xCC);
-[e ( _LCD_Command (1 -> -> 204 `i `uc ]
+[; ;mainBT.c: 78:   LCD_Command(0xC0);
+[e ( _LCD_Command (1 -> -> 192 `i `uc ]
 "79
 [; ;mainBT.c: 79:   LCD_string("0");
-[e ( _LCD_string (1 :s 4C ]
+[e ( _LCD_string (1 :s 2C ]
 "80
-[; ;mainBT.c: 80:   _delay((unsigned long)((500)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;mainBT.c: 80:   LCD_Command(0xC5);
+[e ( _LCD_Command (1 -> -> 197 `i `uc ]
+"81
+[; ;mainBT.c: 81:   LCD_string("0");
+[e ( _LCD_string (1 :s 3C ]
+"82
+[; ;mainBT.c: 82:   LCD_Command(0xCC);
+[e ( _LCD_Command (1 -> -> 204 `i `uc ]
 "83
-[; ;mainBT.c: 83:   while(1){
+[; ;mainBT.c: 83:   LCD_string("0");
+[e ( _LCD_string (1 :s 4C ]
+"84
+[; ;mainBT.c: 84:   _delay((unsigned long)((500)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"87
+[; ;mainBT.c: 87:   while(1){
 [e :U 153 ]
 {
-"84
-[; ;mainBT.c: 84:       RD1=0;
-[e = _RD1 -> -> 0 `i `b ]
-"85
-[; ;mainBT.c: 85:       RD2=0;
-[e = _RD2 -> -> 0 `i `b ]
-"86
-[; ;mainBT.c: 86:       RD3=0;
-[e = _RD3 -> -> 0 `i `b ]
-"87
-[; ;mainBT.c: 87:       updateWifiCounter();
-[e ( _updateWifiCounter ..  ]
 "88
-[; ;mainBT.c: 88:       _delay((unsigned long)((50)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;mainBT.c: 88:     RD1=0;
+[e = _RD1 -> -> 0 `i `b ]
 "89
-[; ;mainBT.c: 89:       distance3 = dist3();
-[e = _distance3 ( _dist3 ..  ]
+[; ;mainBT.c: 89:     RD2=0;
+[e = _RD2 -> -> 0 `i `b ]
 "90
-[; ;mainBT.c: 90:       if(distance3 > door_CM){_delay((unsigned long)((500)*(4000000/4000.0)));}
+[; ;mainBT.c: 90:     RD3=0;
+[e = _RD3 -> -> 0 `i `b ]
+"92
+[; ;mainBT.c: 92:     _delay((unsigned long)((50)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"93
+[; ;mainBT.c: 93:     distance3 = dist3();
+[e = _distance3 ( _dist3 ..  ]
+"94
+[; ;mainBT.c: 94:     if(distance3 > door_CM){_delay((unsigned long)((500)*(4000000/4000.0)));}
 [e $ ! > _distance3 -> _door_CM `f 155  ]
 {
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 }
 [e :U 155 ]
-"91
-[; ;mainBT.c: 91:       if(distance3 < door_CM){
+"95
+[; ;mainBT.c: 95:     if(distance3 < door_CM){
 [e $ ! < _distance3 -> _door_CM `f 156  ]
 {
-"92
-[; ;mainBT.c: 92:         RD1=1;
+"96
+[; ;mainBT.c: 96:       RD1=1;
 [e = _RD1 -> -> 1 `i `b ]
-"93
-[; ;mainBT.c: 93:         distance2=dist2();
+"97
+[; ;mainBT.c: 97:       distance2=dist2();
 [e = _distance2 ( _dist2 ..  ]
-"94
-[; ;mainBT.c: 94:         if(distance2 > door_CM){person150_170();}
+"98
+[; ;mainBT.c: 98:       if(distance2 > door_CM){
 [e $ ! > _distance2 -> _door_CM `f 157  ]
 {
-[e ( _person150_170 ..  ]
+"99
+[; ;mainBT.c: 99:         count3 = count3 + 1;
+[e = _count3 + _count3 -> 1 `i ]
+"100
+[; ;mainBT.c: 100:         c3=itoa(count3);
+[e = _c3 -> ( _itoa (1 _count3 `uc ]
+"101
+[; ;mainBT.c: 101:         LCD_Command(0xC0);
+[e ( _LCD_Command (1 -> -> 192 `i `uc ]
+"102
+[; ;mainBT.c: 102:         LCD_string(c3);
+[e ( _LCD_string (1 -> _c3 `*uc ]
+"103
+[; ;mainBT.c: 103:         BT_load_char(count3);
+[e ( _BT_load_char (1 -> _count3 `uc ]
+"104
+[; ;mainBT.c: 104:         _delay((unsigned long)((1500)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"105
+[; ;mainBT.c: 105:       }
 }
 [e :U 157 ]
-"95
-[; ;mainBT.c: 95:         if(distance2 < door_CM){
+"106
+[; ;mainBT.c: 106:       if(distance2 < door_CM){
 [e $ ! < _distance2 -> _door_CM `f 158  ]
 {
-"96
-[; ;mainBT.c: 96:             RD2=1;
+"107
+[; ;mainBT.c: 107:           RD2=1;
 [e = _RD2 -> -> 1 `i `b ]
-"97
-[; ;mainBT.c: 97:             distance1= dist1();
+"108
+[; ;mainBT.c: 108:           distance1= dist1();
 [e = _distance1 ( _dist1 ..  ]
-"98
-[; ;mainBT.c: 98:             if(distance1 > door_CM){person170_190();}
+"109
+[; ;mainBT.c: 109:           if(distance1 > door_CM){
 [e $ ! > _distance1 -> _door_CM `f 159  ]
 {
-[e ( _person170_190 ..  ]
+"110
+[; ;mainBT.c: 110:             count2 = count2 + 1;
+[e = _count2 + _count2 -> 1 `i ]
+"111
+[; ;mainBT.c: 111:             c2=itoa(count2);
+[e = _c2 -> ( _itoa (1 _count2 `uc ]
+"112
+[; ;mainBT.c: 112:             LCD_Command(0xC5);
+[e ( _LCD_Command (1 -> -> 197 `i `uc ]
+"113
+[; ;mainBT.c: 113:             LCD_string(c2);
+[e ( _LCD_string (1 -> _c2 `*uc ]
+"114
+[; ;mainBT.c: 114:             BT_load_char(50+count2);
+[e ( _BT_load_char (1 -> + -> 50 `i _count2 `uc ]
+"115
+[; ;mainBT.c: 115:             _delay((unsigned long)((1500)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"116
+[; ;mainBT.c: 116:           }
 }
 [e :U 159 ]
-"99
-[; ;mainBT.c: 99:             if(distance1 < door_CM){
+"117
+[; ;mainBT.c: 117:           if(distance1 < door_CM){
 [e $ ! < _distance1 -> _door_CM `f 160  ]
 {
-"100
-[; ;mainBT.c: 100:                 RD3=1;
+"118
+[; ;mainBT.c: 118:             RD3=1;
 [e = _RD3 -> -> 1 `i `b ]
-"101
-[; ;mainBT.c: 101:                 personOver_190();
-[e ( _personOver_190 ..  ]
-"102
-[; ;mainBT.c: 102:             }
+"119
+[; ;mainBT.c: 119:             count1 = count1 + 1;
+[e = _count1 + _count1 -> 1 `i ]
+"120
+[; ;mainBT.c: 120:             c1=itoa(count1);
+[e = _c1 -> ( _itoa (1 _count1 `uc ]
+"121
+[; ;mainBT.c: 121:             LCD_Command(0xCC);
+[e ( _LCD_Command (1 -> -> 204 `i `uc ]
+"122
+[; ;mainBT.c: 122:             LCD_string(c1);
+[e ( _LCD_string (1 -> _c1 `*uc ]
+"123
+[; ;mainBT.c: 123:             BT_load_char(100+count1);
+[e ( _BT_load_char (1 -> + -> 100 `i _count1 `uc ]
+"124
+[; ;mainBT.c: 124:             _delay((unsigned long)((1500)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"125
+[; ;mainBT.c: 125:           }
 }
 [e :U 160 ]
-"103
-[; ;mainBT.c: 103:          }
+"126
+[; ;mainBT.c: 126:        }
 }
 [e :U 158 ]
-"104
-[; ;mainBT.c: 104:       }
+"127
+[; ;mainBT.c: 127:     }
 }
 [e :U 156 ]
-"105
-[; ;mainBT.c: 105:   }
+"128
+[; ;mainBT.c: 128:   }
 }
 [e :U 152 ]
 [e $U 153  ]
 [e :U 154 ]
-"106
-[; ;mainBT.c: 106: }
-[e :UE 151 ]
-}
-"108
-[; ;mainBT.c: 108: void person150_170(void){
-[v _person150_170 `(v ~T0 @X0 1 ef ]
-{
-[e :U _person150_170 ]
-[f ]
-"109
-[; ;mainBT.c: 109:     LCD_Command(0xC0);
-[e ( _LCD_Command (1 -> -> 192 `i `uc ]
-"110
-[; ;mainBT.c: 110:     count3++;
-[e ++ _count3 -> 1 `i ]
-"111
-[; ;mainBT.c: 111:     c3=itoa(count3);
-[e = _c3 -> ( _itoa (1 _count3 `uc ]
-"112
-[; ;mainBT.c: 112:     LCD_string(c3);
-[e ( _LCD_string (1 -> _c3 `*uc ]
-"114
-[; ;mainBT.c: 114:     BT_load_string("People between 150-170:  ");
-[e ( _BT_load_string (1 :s 5C ]
-"115
-[; ;mainBT.c: 115:     broadcast_BT();
-[e ( _broadcast_BT ..  ]
-"116
-[; ;mainBT.c: 116:     BT_load_string(c3);
-[e ( _BT_load_string (1 -> _c3 `*uc ]
-"117
-[; ;mainBT.c: 117:     broadcast_BT();
-[e ( _broadcast_BT ..  ]
-"118
-[; ;mainBT.c: 118:     BT_load_string("\n");
-[e ( _BT_load_string (1 :s 6C ]
-"119
-[; ;mainBT.c: 119:     broadcast_BT();
-[e ( _broadcast_BT ..  ]
-"120
-[; ;mainBT.c: 120:     BT_load_string("------------------------\n");
-[e ( _BT_load_string (1 :s 7C ]
-"121
-[; ;mainBT.c: 121:     broadcast_BT();
-[e ( _broadcast_BT ..  ]
-"122
-[; ;mainBT.c: 122:     _delay((unsigned long)((500)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"123
-[; ;mainBT.c: 123: }
-[e :UE 161 ]
-}
-"125
-[; ;mainBT.c: 125: void person170_190(void){
-[v _person170_190 `(v ~T0 @X0 1 ef ]
-{
-[e :U _person170_190 ]
-[f ]
-"126
-[; ;mainBT.c: 126:     LCD_Command(0xC5);
-[e ( _LCD_Command (1 -> -> 197 `i `uc ]
-"127
-[; ;mainBT.c: 127:     count2++;
-[e ++ _count2 -> 1 `i ]
-"128
-[; ;mainBT.c: 128:     c2=itoa(count2);
-[e = _c2 -> ( _itoa (1 _count2 `uc ]
 "129
-[; ;mainBT.c: 129:     LCD_string(c2);
-[e ( _LCD_string (1 -> _c2 `*uc ]
-"130
-[; ;mainBT.c: 130:     BT_load_string("People between 170-190:  ");
-[e ( _BT_load_string (1 :s 8C ]
-"131
-[; ;mainBT.c: 131:     broadcast_BT();
-[e ( _broadcast_BT ..  ]
-"132
-[; ;mainBT.c: 132:     BT_load_string(c2);
-[e ( _BT_load_string (1 -> _c2 `*uc ]
-"133
-[; ;mainBT.c: 133:     broadcast_BT();
-[e ( _broadcast_BT ..  ]
-"134
-[; ;mainBT.c: 134:     BT_load_string("\n");
-[e ( _BT_load_string (1 :s 9C ]
-"135
-[; ;mainBT.c: 135:     broadcast_BT();
-[e ( _broadcast_BT ..  ]
-"136
-[; ;mainBT.c: 136:     BT_load_string("------------------------\n");
-[e ( _BT_load_string (1 :s 10C ]
-"137
-[; ;mainBT.c: 137:     broadcast_BT();
-[e ( _broadcast_BT ..  ]
-"138
-[; ;mainBT.c: 138:   _delay((unsigned long)((500)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"139
-[; ;mainBT.c: 139: }
-[e :UE 162 ]
-}
-"141
-[; ;mainBT.c: 141: void personOver_190(void){
-[v _personOver_190 `(v ~T0 @X0 1 ef ]
-{
-[e :U _personOver_190 ]
-[f ]
-"142
-[; ;mainBT.c: 142:     LCD_Command(0xCC);
-[e ( _LCD_Command (1 -> -> 204 `i `uc ]
-"143
-[; ;mainBT.c: 143:     count1++;
-[e ++ _count1 -> 1 `i ]
-"144
-[; ;mainBT.c: 144:     c1=itoa(count1);
-[e = _c1 -> ( _itoa (1 _count1 `uc ]
-"145
-[; ;mainBT.c: 145:     LCD_string(c1);
-[e ( _LCD_string (1 -> _c1 `*uc ]
-"146
-[; ;mainBT.c: 146:     BT_load_string("People over 190:  ");
-[e ( _BT_load_string (1 :s 11C ]
-"147
-[; ;mainBT.c: 147:     broadcast_BT();
-[e ( _broadcast_BT ..  ]
-"148
-[; ;mainBT.c: 148:     BT_load_string(c1);
-[e ( _BT_load_string (1 -> _c1 `*uc ]
-"149
-[; ;mainBT.c: 149:     broadcast_BT();
-[e ( _broadcast_BT ..  ]
-"150
-[; ;mainBT.c: 150:     BT_load_string("\n");
-[e ( _BT_load_string (1 :s 12C ]
-"151
-[; ;mainBT.c: 151:     broadcast_BT();
-[e ( _broadcast_BT ..  ]
-"152
-[; ;mainBT.c: 152:     BT_load_string("------------------------\n");
-[e ( _BT_load_string (1 :s 13C ]
-"153
-[; ;mainBT.c: 153:     broadcast_BT();
-[e ( _broadcast_BT ..  ]
-"154
-[; ;mainBT.c: 154:     _delay((unsigned long)((500)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"155
-[; ;mainBT.c: 155: }
-[e :UE 163 ]
-}
-"157
-[; ;mainBT.c: 157: void updateWifiCounter (void){
-[v _updateWifiCounter `(v ~T0 @X0 1 ef ]
-{
-[e :U _updateWifiCounter ]
-[f ]
-"160
-[; ;mainBT.c: 160:     if(wifiCounter == 1){
-[e $ ! == _wifiCounter -> 1 `i 165  ]
-{
-"162
-[; ;mainBT.c: 162:         RA0 = 0;
-[e = _RA0 -> -> 0 `i `b ]
-"163
-[; ;mainBT.c: 163:         RA1 = 0;
-[e = _RA1 -> -> 0 `i `b ]
-"166
-[; ;mainBT.c: 166:         int temp;
-[v _temp `i ~T0 @X0 1 a ]
-"167
-[; ;mainBT.c: 167:         temp = count3%2;
-[e = _temp % _count3 -> 2 `i ]
-"168
-[; ;mainBT.c: 168:         if (temp ==1){RA2 = 1;}
-[e $ ! == _temp -> 1 `i 166  ]
-{
-[e = _RA2 -> -> 1 `i `b ]
-}
-[e :U 166 ]
-"169
-[; ;mainBT.c: 169:         if (temp ==0){RA2 = 0;}
-[e $ ! == _temp -> 0 `i 167  ]
-{
-[e = _RA2 -> -> 0 `i `b ]
-}
-[e :U 167 ]
-"170
-[; ;mainBT.c: 170:         count3 = count3/2;
-[e = _count3 / _count3 -> 2 `i ]
-"171
-[; ;mainBT.c: 171:         temp = count3%2;
-[e = _temp % _count3 -> 2 `i ]
-"172
-[; ;mainBT.c: 172:         if (temp ==1){RA3 = 1;}
-[e $ ! == _temp -> 1 `i 168  ]
-{
-[e = _RA3 -> -> 1 `i `b ]
-}
-[e :U 168 ]
-"173
-[; ;mainBT.c: 173:         if (temp ==0){RA3 = 0;}
-[e $ ! == _temp -> 0 `i 169  ]
-{
-[e = _RA3 -> -> 0 `i `b ]
-}
-[e :U 169 ]
-"174
-[; ;mainBT.c: 174:         count3 = count3/2;
-[e = _count3 / _count3 -> 2 `i ]
-"175
-[; ;mainBT.c: 175:         temp = count3%2;
-[e = _temp % _count3 -> 2 `i ]
-"176
-[; ;mainBT.c: 176:         if (temp ==1){RA4 = 1;}
-[e $ ! == _temp -> 1 `i 170  ]
-{
-[e = _RA4 -> -> 1 `i `b ]
-}
-[e :U 170 ]
-"177
-[; ;mainBT.c: 177:         if (temp ==0){RA4 = 0;}
-[e $ ! == _temp -> 0 `i 171  ]
-{
-[e = _RA4 -> -> 0 `i `b ]
-}
-[e :U 171 ]
-"178
-[; ;mainBT.c: 178:         count3 = count3/2;
-[e = _count3 / _count3 -> 2 `i ]
-"179
-[; ;mainBT.c: 179:         temp = count3%2;
-[e = _temp % _count3 -> 2 `i ]
-"180
-[; ;mainBT.c: 180:         if (temp ==1){RA5 = 1;}
-[e $ ! == _temp -> 1 `i 172  ]
-{
-[e = _RA5 -> -> 1 `i `b ]
-}
-[e :U 172 ]
-"181
-[; ;mainBT.c: 181:         if (temp ==0){RA5 = 0;}
-[e $ ! == _temp -> 0 `i 173  ]
-{
-[e = _RA5 -> -> 0 `i `b ]
-}
-[e :U 173 ]
-"183
-[; ;mainBT.c: 183:         wifiCounter = 2;
-[e = _wifiCounter -> 2 `i ]
-"185
-[; ;mainBT.c: 185:     }
-}
-[e :U 165 ]
-"186
-[; ;mainBT.c: 186:     if(wifiCounter == 2){
-[e $ ! == _wifiCounter -> 2 `i 174  ]
-{
-"188
-[; ;mainBT.c: 188:         RA0 = 1;
-[e = _RA0 -> -> 1 `i `b ]
-"189
-[; ;mainBT.c: 189:         RA1 = 0;
-[e = _RA1 -> -> 0 `i `b ]
-"192
-[; ;mainBT.c: 192:         int temp;
-[v _temp `i ~T0 @X0 1 a ]
-"193
-[; ;mainBT.c: 193:         temp = count2%2;
-[e = _temp % _count2 -> 2 `i ]
-"194
-[; ;mainBT.c: 194:         if (temp ==1){RA2 = 1;}
-[e $ ! == _temp -> 1 `i 175  ]
-{
-[e = _RA2 -> -> 1 `i `b ]
-}
-[e :U 175 ]
-"195
-[; ;mainBT.c: 195:         if (temp ==0){RA2 = 0;}
-[e $ ! == _temp -> 0 `i 176  ]
-{
-[e = _RA2 -> -> 0 `i `b ]
-}
-[e :U 176 ]
-"196
-[; ;mainBT.c: 196:         count2 = count2/2;
-[e = _count2 / _count2 -> 2 `i ]
-"197
-[; ;mainBT.c: 197:         temp = count2%2;
-[e = _temp % _count2 -> 2 `i ]
-"198
-[; ;mainBT.c: 198:         if (temp ==1){RA3 = 1;}
-[e $ ! == _temp -> 1 `i 177  ]
-{
-[e = _RA3 -> -> 1 `i `b ]
-}
-[e :U 177 ]
-"199
-[; ;mainBT.c: 199:         if (temp ==0){RA3 = 0;}
-[e $ ! == _temp -> 0 `i 178  ]
-{
-[e = _RA3 -> -> 0 `i `b ]
-}
-[e :U 178 ]
-"200
-[; ;mainBT.c: 200:         count2 = count2/2;
-[e = _count2 / _count2 -> 2 `i ]
-"201
-[; ;mainBT.c: 201:         temp = count2%2;
-[e = _temp % _count2 -> 2 `i ]
-"202
-[; ;mainBT.c: 202:         if (temp ==1){RA4 = 1;}
-[e $ ! == _temp -> 1 `i 179  ]
-{
-[e = _RA4 -> -> 1 `i `b ]
-}
-[e :U 179 ]
-"203
-[; ;mainBT.c: 203:         if (temp ==0){RA4 = 0;}
-[e $ ! == _temp -> 0 `i 180  ]
-{
-[e = _RA4 -> -> 0 `i `b ]
-}
-[e :U 180 ]
-"204
-[; ;mainBT.c: 204:         count2 = count2/2;
-[e = _count2 / _count2 -> 2 `i ]
-"205
-[; ;mainBT.c: 205:         temp = count2%2;
-[e = _temp % _count2 -> 2 `i ]
-"206
-[; ;mainBT.c: 206:         if (temp ==1){RA5 = 1;}
-[e $ ! == _temp -> 1 `i 181  ]
-{
-[e = _RA5 -> -> 1 `i `b ]
-}
-[e :U 181 ]
-"207
-[; ;mainBT.c: 207:         if (temp ==0){RA5 = 0;}
-[e $ ! == _temp -> 0 `i 182  ]
-{
-[e = _RA5 -> -> 0 `i `b ]
-}
-[e :U 182 ]
-"209
-[; ;mainBT.c: 209:     }
-}
-[e :U 174 ]
-"210
-[; ;mainBT.c: 210:     if(wifiCounter == 3){
-[e $ ! == _wifiCounter -> 3 `i 183  ]
-{
-"212
-[; ;mainBT.c: 212:         RA0 = 0;
-[e = _RA0 -> -> 0 `i `b ]
-"213
-[; ;mainBT.c: 213:         RA1 = 1;
-[e = _RA1 -> -> 1 `i `b ]
-"216
-[; ;mainBT.c: 216:         int temp;
-[v _temp `i ~T0 @X0 1 a ]
-"217
-[; ;mainBT.c: 217:         temp = count1%2;
-[e = _temp % _count1 -> 2 `i ]
-"218
-[; ;mainBT.c: 218:         if (temp ==1){RA2 = 1;}
-[e $ ! == _temp -> 1 `i 184  ]
-{
-[e = _RA2 -> -> 1 `i `b ]
-}
-[e :U 184 ]
-"219
-[; ;mainBT.c: 219:         if (temp ==0){RA2 = 0;}
-[e $ ! == _temp -> 0 `i 185  ]
-{
-[e = _RA2 -> -> 0 `i `b ]
-}
-[e :U 185 ]
-"220
-[; ;mainBT.c: 220:         count1 = count1/2;
-[e = _count1 / _count1 -> 2 `i ]
-"221
-[; ;mainBT.c: 221:         temp = count1%2;
-[e = _temp % _count1 -> 2 `i ]
-"222
-[; ;mainBT.c: 222:         if (temp ==1){RA3 = 1;}
-[e $ ! == _temp -> 1 `i 186  ]
-{
-[e = _RA3 -> -> 1 `i `b ]
-}
-[e :U 186 ]
-"223
-[; ;mainBT.c: 223:         if (temp ==0){RA3 = 0;}
-[e $ ! == _temp -> 0 `i 187  ]
-{
-[e = _RA3 -> -> 0 `i `b ]
-}
-[e :U 187 ]
-"224
-[; ;mainBT.c: 224:         count1 = count1/2;
-[e = _count1 / _count1 -> 2 `i ]
-"225
-[; ;mainBT.c: 225:         temp = count1%2;
-[e = _temp % _count1 -> 2 `i ]
-"226
-[; ;mainBT.c: 226:         if (temp ==1){RA4 = 1;}
-[e $ ! == _temp -> 1 `i 188  ]
-{
-[e = _RA4 -> -> 1 `i `b ]
-}
-[e :U 188 ]
-"227
-[; ;mainBT.c: 227:         if (temp ==0){RA4 = 0;}
-[e $ ! == _temp -> 0 `i 189  ]
-{
-[e = _RA4 -> -> 0 `i `b ]
-}
-[e :U 189 ]
-"228
-[; ;mainBT.c: 228:         count1 = count1/2;
-[e = _count1 / _count1 -> 2 `i ]
-"229
-[; ;mainBT.c: 229:         temp = count1%2;
-[e = _temp % _count1 -> 2 `i ]
-"230
-[; ;mainBT.c: 230:         if (temp ==1){RA5 = 1;}
-[e $ ! == _temp -> 1 `i 190  ]
-{
-[e = _RA5 -> -> 1 `i `b ]
-}
-[e :U 190 ]
-"231
-[; ;mainBT.c: 231:         if (temp ==0){RA5 = 0;}
-[e $ ! == _temp -> 0 `i 191  ]
-{
-[e = _RA5 -> -> 0 `i `b ]
-}
-[e :U 191 ]
-"232
-[; ;mainBT.c: 232:         wifiCounter = 1;
-[e = _wifiCounter -> 1 `i ]
-"234
-[; ;mainBT.c: 234:     }
-}
-[e :U 183 ]
-"236
-[; ;mainBT.c: 236: }
-[e :UE 164 ]
+[; ;mainBT.c: 129: }
+[e :UE 151 ]
 }
 [a 1C 53 45 55 32 55 45 57 32 111 118 101 114 32 57 0 ]
 [a 2C 48 0 ]
 [a 3C 48 0 ]
 [a 4C 48 0 ]
-[a 8C 80 101 111 112 108 101 32 98 101 116 119 101 101 110 32 49 55 48 45 49 57 48 58 32 32 0 ]
-[a 11C 80 101 111 112 108 101 32 111 118 101 114 32 49 57 48 58 32 32 0 ]
-[a 5C 80 101 111 112 108 101 32 98 101 116 119 101 101 110 32 49 53 48 45 49 55 48 58 32 32 0 ]
-[a 7C 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 10 0 ]
-[a 10C 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 10 0 ]
-[a 13C 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 10 0 ]
-[a 6C 10 0 ]
-[a 9C 10 0 ]
-[a 12C 10 0 ]

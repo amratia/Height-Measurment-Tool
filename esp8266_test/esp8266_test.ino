@@ -11,6 +11,10 @@ int count3;
 int x; 
 int b1,b2,b3,b4,sel0,sel1;
 
+int flag1;
+int flag2;
+int flag3;
+
 WiFiClient client;
 
 unsigned long myChannelNumber = 1947398; //Your Channel Number (Without Brackets)
@@ -28,6 +32,10 @@ void setup() {
   count2 = 0;
   count3 = 0;
 
+  flag1 = 0;
+  flag2 = 0;
+  flag3 = 0;
+
   Serial.begin(9600);
   delay(10);
   // Connect to WiFi network
@@ -37,16 +45,40 @@ void setup() {
 }
 //------------------------------------------------------------------------------------------------------------------- LOOP
 void loop() {
-  b1 = digitalRead(D2);
-  b2 = digitalRead(D3);
-  b3 = digitalRead(D4);
-  b4 = digitalRead(D5);
-  sel0 = digitalRead(D0);
-  sel1 = digitalRead(D1);
-  x = (b1*1)+(b2*2)+(b3*4)+(b4*8);
-  if((sel0==0)&&(sel1==0)){count1=x;}
-  if((sel0==1)&&(sel1==0)){count2=x;}
-  if((sel0==0)&&(sel1==1)){count3=x;}
+//  b1 = digitalRead(D2);
+//  b2 = digitalRead(D3);
+//  b3 = digitalRead(D4);
+//  b4 = digitalRead(D5);
+//  sel0 = digitalRead(D0);
+//  sel1 = digitalRead(D1);
+//  x = (b1*1)+(b2*2)+(b3*4)+(b4*8);
+//  if((sel0==0)&&(sel1==0)){count1=x;}
+//  if((sel0==1)&&(sel1==0)){count2=x;}
+//  if((sel0==0)&&(sel1==1)){count3=x;}
+//-----------------------------------------------
+  if((digitalRead(D1) == HIGH) &&(flag1 == 0)){
+    flag1 = 1;
+  }
+  if((digitalRead(D1) == LOW) &&(flag1 == 1)){
+    count1++;
+    flag1 =0; 
+  }
+//----------------------------------------------
+  if((digitalRead(D2) == HIGH) &&(flag2 == 0)){
+    flag2 = 1;
+  }
+  if((digitalRead(D2) == LOW) &&(flag2 == 1)){
+    count2++;
+    flag2 =0; 
+  }
+//----------------------------------------------
+  if((digitalRead(D3) == HIGH) &&(flag3 == 0)){
+    flag3 = 1;
+  }
+  if((digitalRead(D3) == LOW) &&(flag3 == 1)){
+    count3++;
+    flag3 =0; 
+  }
   ThingSpeak.writeField(myChannelNumber, 1,count1, myWriteAPIKey); //Update in ThingSpeak
   ThingSpeak.writeField(myChannelNumber, 2,count2, myWriteAPIKey); //Update in ThingSpeak
   ThingSpeak.writeField(myChannelNumber, 3,count3, myWriteAPIKey); //Update in ThingSpeak

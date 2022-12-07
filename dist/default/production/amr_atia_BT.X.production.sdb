@@ -5,12 +5,8 @@
 [d frameptr 0 ]
 "4 D:\amr_atia_BT.X/BT.h
 [v _Initialize_Bluetooth Initialize_Bluetooth `(v  1 e 1 0 ]
-"23
+"24
 [v _BT_load_char BT_load_char `(v  1 e 1 0 ]
-"31
-[v _BT_load_string BT_load_string `(v  1 e 1 0 ]
-"38
-[v _broadcast_BT broadcast_BT `(v  1 e 1 0 ]
 "16 D:\amr_atia_BT.X/LCD.h
 [v _LCD_Data LCD_Data `(v  1 e 1 0 ]
 "27
@@ -19,9 +15,9 @@
 [v _LCD_init LCD_init `(v  1 e 1 0 ]
 "46
 [v _LCD_string LCD_string `(v  1 e 1 0 ]
-"52
+"54
 [v _itoa itoa `(*.4uc  1 e 1 0 ]
-"81
+"79
 [v _LCD_Clear LCD_Clear `(v  1 e 1 0 ]
 "11 D:\amr_atia_BT.X/sensor.h
 [v _dist1 dist1 `(f  1 e 4 0 ]
@@ -47,16 +43,8 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"34 D:\amr_atia_BT.X\mainBT.c
+"29 D:\amr_atia_BT.X\mainBT.c
 [v _main main `(v  1 e 1 0 ]
-"108
-[v _person150_170 person150_170 `(v  1 e 1 0 ]
-"125
-[v _person170_190 person170_190 `(v  1 e 1 0 ]
-"141
-[v _personOver_190 personOver_190 `(v  1 e 1 0 ]
-"157
-[v _updateWifiCounter updateWifiCounter `(v  1 e 1 0 ]
 "217 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h
 [v _PORTB PORTB `VEuc  1 e 1 @6 ]
 "635
@@ -75,18 +63,6 @@
 [v _CREN CREN `VEb  1 e 0 @196 ]
 "2619
 [v _OERR OERR `VEb  1 e 0 @193 ]
-"2661
-[v _RA0 RA0 `VEb  1 e 0 @40 ]
-"2664
-[v _RA1 RA1 `VEb  1 e 0 @41 ]
-"2667
-[v _RA2 RA2 `VEb  1 e 0 @42 ]
-"2670
-[v _RA3 RA3 `VEb  1 e 0 @43 ]
-"2673
-[v _RA4 RA4 `VEb  1 e 0 @44 ]
-"2676
-[v _RA5 RA5 `VEb  1 e 0 @45 ]
 "2715
 [v _RC2 RC2 `VEb  1 e 0 @58 ]
 "2718
@@ -167,6 +143,12 @@
 [v _TRISD6 TRISD6 `VEb  1 e 0 @1094 ]
 "3009
 [v _TRISD7 TRISD7 `VEb  1 e 0 @1095 ]
+"3012
+[v _TRISE0 TRISE0 `VEb  1 e 0 @1096 ]
+"3015
+[v _TRISE1 TRISE1 `VEb  1 e 0 @1097 ]
+"3018
+[v _TRISE2 TRISE2 `VEb  1 e 0 @1098 ]
 "3021
 [v _TRMT TRMT `VEb  1 e 0 @1217 ]
 "3027
@@ -175,69 +157,41 @@
 [v _TXEN TXEN `VEb  1 e 0 @1221 ]
 "3042
 [v _TXIF TXIF `VEb  1 e 0 @100 ]
-"22 D:\amr_atia_BT.X\mainBT.c
-[v _wifiCounter wifiCounter `i  1 e 2 0 ]
-"23
-[v _count3 count3 `i  1 e 2 0 ]
-"24
-[v _count2 count2 `i  1 e 2 0 ]
-"25
-[v _count1 count1 `i  1 e 2 0 ]
-"26
-[v _c3 c3 `uc  1 e 1 0 ]
-"27
-[v _c2 c2 `uc  1 e 1 0 ]
-"28
-[v _c1 c1 `uc  1 e 1 0 ]
-"34
+"29 D:\amr_atia_BT.X\mainBT.c
 [v _main main `(v  1 e 1 0 ]
 {
-"65
-[v main@distance3 distance3 `f  1 a 4 46 ]
-"64
-[v main@distance2 distance2 `f  1 a 4 42 ]
 "63
-[v main@distance1 distance1 `f  1 a 4 38 ]
-"106
+[v main@distance3 distance3 `f  1 a 4 49 ]
+"62
+[v main@distance2 distance2 `f  1 a 4 45 ]
+"61
+[v main@distance1 distance1 `f  1 a 4 41 ]
+"67
+[v main@count1 count1 `i  1 a 2 57 ]
+"66
+[v main@count2 count2 `i  1 a 2 55 ]
+"65
+[v main@count3 count3 `i  1 a 2 53 ]
+"70
+[v main@c1 c1 `uc  1 a 1 40 ]
+"69
+[v main@c2 c2 `uc  1 a 1 39 ]
+"68
+[v main@c3 c3 `uc  1 a 1 38 ]
+"129
 } 0
-"157
-[v _updateWifiCounter updateWifiCounter `(v  1 e 1 0 ]
-{
-"216
-[v updateWifiCounter@temp_181 temp `i  1 a 2 4 ]
-"192
-[v updateWifiCounter@temp_180 temp `i  1 a 2 2 ]
-"166
-[v updateWifiCounter@temp temp `i  1 a 2 0 ]
-"236
-} 0
-"141
-[v _personOver_190 personOver_190 `(v  1 e 1 0 ]
-{
-"155
-} 0
-"125
-[v _person170_190 person170_190 `(v  1 e 1 0 ]
-{
-"139
-} 0
-"108
-[v _person150_170 person150_170 `(v  1 e 1 0 ]
-{
-"123
-} 0
-"52 D:\amr_atia_BT.X/LCD.h
+"54 D:\amr_atia_BT.X/LCD.h
 [v _itoa itoa `(*.4uc  1 e 1 0 ]
 {
 "57
 [v itoa@c c `i  1 a 2 2 ]
-"55
+"56
 [v itoa@original original `i  1 a 2 0 ]
-"52
-[v itoa@value value `i  1 p 2 9 ]
 "54
+[v itoa@value value `i  1 p 2 9 ]
+"55
 [v itoa@buffer buffer `[12]uc  1 s 12 buffer ]
-"74
+"72
 } 0
 "5 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\awmod.c
 [v ___awmod __awmod `(i  1 e 2 0 ]
@@ -262,43 +216,6 @@
 [v ___awdiv@divisor divisor `i  1 p 2 0 ]
 [v ___awdiv@dividend dividend `i  1 p 2 2 ]
 "41
-} 0
-"38 D:\amr_atia_BT.X/BT.h
-[v _broadcast_BT broadcast_BT `(v  1 e 1 0 ]
-{
-"41
-} 0
-"46 D:\amr_atia_BT.X/LCD.h
-[v _LCD_string LCD_string `(v  1 e 1 0 ]
-{
-"48
-[v LCD_string@i i `i  1 a 2 5 ]
-"46
-[v LCD_string@str str `*.26uc  1 p 2 3 ]
-"51
-} 0
-"16
-[v _LCD_Data LCD_Data `(v  1 e 1 0 ]
-{
-[v LCD_Data@data data `uc  1 a 1 wreg ]
-[v LCD_Data@data data `uc  1 a 1 wreg ]
-"18
-[v LCD_Data@data data `uc  1 a 1 2 ]
-"24
-} 0
-"31 D:\amr_atia_BT.X/BT.h
-[v _BT_load_string BT_load_string `(v  1 e 1 0 ]
-{
-[v BT_load_string@string string `*.26uc  1 p 2 1 ]
-"34
-} 0
-"23
-[v _BT_load_char BT_load_char `(v  1 e 1 0 ]
-{
-[v BT_load_char@byte byte `uc  1 a 1 wreg ]
-[v BT_load_char@byte byte `uc  1 a 1 wreg ]
-[v BT_load_char@byte byte `uc  1 a 1 0 ]
-"27
 } 0
 "47 D:\amr_atia_BT.X/sensor.h
 [v _dist3 dist3 `(f  1 e 4 0 ]
@@ -363,15 +280,33 @@
 [v ___flge@ff2 ff2 `d  1 p 4 4 ]
 "19
 } 0
-"37 D:\amr_atia_BT.X/LCD.h
+"46 D:\amr_atia_BT.X/LCD.h
+[v _LCD_string LCD_string `(v  1 e 1 0 ]
+{
+"48
+[v LCD_string@i i `i  1 a 2 5 ]
+"46
+[v LCD_string@str str `*.26uc  1 p 2 3 ]
+"51
+} 0
+"16
+[v _LCD_Data LCD_Data `(v  1 e 1 0 ]
+{
+[v LCD_Data@data data `uc  1 a 1 wreg ]
+[v LCD_Data@data data `uc  1 a 1 wreg ]
+"18
+[v LCD_Data@data data `uc  1 a 1 2 ]
+"24
+} 0
+"37
 [v _LCD_init LCD_init `(v  1 e 1 0 ]
 {
 "44
 } 0
-"81
+"79
 [v _LCD_Clear LCD_Clear `(v  1 e 1 0 ]
 {
-"84
+"82
 } 0
 "27
 [v _LCD_Command LCD_Command `(v  1 e 1 0 ]
@@ -385,5 +320,13 @@
 "4 D:\amr_atia_BT.X/BT.h
 [v _Initialize_Bluetooth Initialize_Bluetooth `(v  1 e 1 0 ]
 {
-"19
+"20
+} 0
+"24
+[v _BT_load_char BT_load_char `(v  1 e 1 0 ]
+{
+[v BT_load_char@byte byte `uc  1 a 1 wreg ]
+[v BT_load_char@byte byte `uc  1 a 1 wreg ]
+[v BT_load_char@byte byte `uc  1 a 1 0 ]
+"28
 } 0
